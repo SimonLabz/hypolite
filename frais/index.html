@@ -1,0 +1,2040 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Frais de transaction</title>
+<meta name="description" content="Estimez les droits de mutation, la prime SCHL, les honoraires notariaux et tous les frais de fermeture de votre achat, refinancement ou renouvellement.">
+<meta property="og:title" content="Frais de transaction immobilière au Québec | Hypolite">
+<meta property="og:description" content="Estimez les droits de mutation, la prime SCHL, les honoraires notariaux et tous les frais de fermeture de votre achat, refinancement ou renouvellement.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:locale:alternate" content="en_CA">
+<!--HY-BOOT-->
+<script>
+(function(){var d=document.documentElement,t=null;
+try{t=localStorage.getItem('hy-theme');}catch(e){}
+if(t!=='dark'&&t!=='light')t='light';
+d.setAttribute('data-theme',t);})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!--/HY-BOOT-->
+<style>
+  [hidden]{display:none!important}
+  img{max-width:100%}
+
+  :root{
+    --navy:#0d1f3c;--gold:#c5973a;--coral:#e06347;--bg:#f7f4ef;--fg:#0d1f3c;
+    --card:#fff;--border:#ddd8d0;--muted:#8a8070;--gold-light:#f5ede0;--green:#2a9d55;
+    --red:#c0392b;color-scheme:light;
+  }
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#0d1a2e;--fg:#f0ece4;--card:#152235;--border:#2a3a52;--muted:#8898aa;--gold-light:#1a2e1a;color-scheme:dark;
+  }}
+  :root[data-theme="dark"]{--bg:#0d1a2e;--fg:#f0ece4;--card:#152235;--border:#2a3a52;--muted:#8898aa;--gold-light:#1a2e1a;color-scheme:dark;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--fg);font-family:'Montserrat',system-ui,sans-serif;font-size:15px;line-height:1.6;padding-inline:16px;padding-block:32px;}
+  .wrapper{max-width:660px;margin:0 auto;display:flex;flex-direction:column;gap:24px;}
+  .layout-grid{display:contents;}
+  .main-col{display:flex;flex-direction:column;gap:24px;}
+  .cta-sticky{order:99;}
+  .skeleton-hint{text-align:center;color:var(--muted);font-size:13px;padding:12px 0;display:none;}
+  @media(min-width:880px){
+    .wrapper{max-width:980px;}
+    .layout-grid{display:grid;grid-template-columns:1fr 268px;gap:28px;align-items:start;}
+    .cta-sticky{position:sticky;top:28px;}
+    .skeleton-hint{display:block;}
+  }
+
+  /* Header */
+  .header{text-align:center;}
+  .logo{display:inline-flex;align-items:center;text-decoration:none;margin-bottom:20px;}
+  .logo-img{height:52px;width:auto;display:block;}
+  .logo-dark{display:none;}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo-light{display:none;}:root:not([data-theme="light"]) .logo-dark{display:block;}}
+  :root[data-theme="dark"] .logo-light{display:none;}
+  :root[data-theme="dark"] .logo-dark{display:block;}
+  .page-title{font-family:'Montserrat',system-ui,sans-serif;font-size:clamp(22px,5vw,34px);font-weight:800;color:var(--fg);line-height:1.2;text-wrap:balance;margin-bottom:8px;}
+  .page-sub{color:var(--muted);font-size:14px;}
+
+  /* Transaction type tabs */
+  .type-tabs{display:flex;gap:8px;flex-wrap:wrap;}
+  .type-tab{flex:1;min-width:120px;padding:12px 16px;border:2px solid var(--border);border-radius:12px;background:var(--card);cursor:pointer;text-align:center;font-weight:600;font-size:14px;color:var(--muted);transition:all .15s;}
+  .type-tab.active{border-color:var(--gold);background:var(--gold-light);color:var(--fg);}
+  .type-tab:hover:not(.active){border-color:var(--gold);color:var(--fg);}
+  .type-tab-icon{font-size:20px;display:block;margin-bottom:4px;}
+
+  /* Cards */
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:20px;}
+  .card-title{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+
+  /* Form */
+  .form-group{display:flex;flex-direction:column;gap:6px;}
+  label{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
+  input[type="text"],input[type="date"],select{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);color:var(--fg);font-size:16px;font-family:inherit;transition:border-color .15s;}
+  input:focus,select:focus{outline:none;border-color:var(--gold);}
+  .input-row{position:relative;display:flex;align-items:stretch;gap:0;}
+  .input-prefix{position:relative;flex:1;}
+  .input-prefix span{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;}
+  .input-prefix input{padding-left:28px;}
+  .unit-toggle{display:flex;border:1.5px solid var(--border);border-radius:10px;overflow:hidden;flex-shrink:0;}
+  .unit-btn{padding:0 14px;background:var(--bg);border:none;cursor:pointer;font-size:14px;font-weight:600;color:var(--muted);transition:all .15s;}
+  .unit-btn.active{background:var(--gold);color:var(--navy);}
+  .form-hint{font-size:12px;color:var(--muted);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:500px){.form-row{grid-template-columns:1fr;}}
+
+  /* Toggle */
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-top:1px solid var(--border);}
+  .toggle-label{font-size:14px;font-weight:600;}
+  .toggle-sub{font-size:12px;color:var(--muted);margin-top:2px;}
+  .toggle-switch{position:relative;width:44px;height:24px;flex-shrink:0;}
+  .toggle-switch input{opacity:0;width:0;height:0;position:absolute;}
+  .toggle-track{position:absolute;inset:0;background:var(--border);border-radius:24px;cursor:pointer;transition:background .2s;}
+  .toggle-track::after{content:'';position:absolute;left:3px;top:3px;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.3);}
+  .toggle-switch input:checked+.toggle-track{background:var(--gold);}
+  .toggle-switch input:checked+.toggle-track::after{transform:translateX(20px);}
+  /* Amortissement toggle */
+  .amort-toggle{display:flex;border:1.5px solid var(--border);border-radius:10px;overflow:hidden;}
+  .amort-btn{flex:1;padding:8px 14px;background:var(--bg);border:none;cursor:pointer;font-size:14px;font-weight:600;color:var(--muted);transition:all .15s;}
+  .amort-btn.active{background:var(--gold);color:var(--navy);}
+  .amort-btn:disabled{cursor:not-allowed;opacity:.45;}
+  .amort-btn.active:disabled{background:var(--border);color:var(--muted);}
+  .amort-conditions{margin-top:10px;display:flex;flex-direction:column;gap:5px;}
+  .amort-cond{font-size:12px;display:flex;align-items:center;gap:6px;color:var(--muted);}
+  .amort-cond .cond-icon{font-size:14px;width:18px;flex-shrink:0;}
+  .amort-cond.met{color:var(--green);}
+    .pill{display:inline-block;background:var(--navy);color:var(--gold);font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle;}
+  .pill-green{background:#1a4d2e;color:#4ade80;}
+
+  /* Results */
+  .results-section{display:flex;flex-direction:column;gap:12px;}
+  .result-hero{background:var(--navy);border-radius:12px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .result-hero-label{color:rgba(255,255,255,.65);font-size:13px;font-weight:500;}
+  .result-hero-amount{font-family:'Montserrat',system-ui,sans-serif;font-size:34px;font-weight:800;letter-spacing:-0.02em;color:var(--gold);font-variant-numeric:tabular-nums;}
+  .result-hero-sub{color:rgba(255,255,255,.5);font-size:12px;margin-top:2px;}
+
+  /* Line items */
+  .line-item{display:flex;justify-content:space-between;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--border);gap:12px;}
+  .line-item:last-child{border-bottom:none;}
+  .line-name{font-size:14px;flex:1;}
+  .line-sub{font-size:12px;color:var(--muted);margin-top:2px;}
+  .line-amount{font-size:14px;font-weight:600;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap;flex-shrink:0;}
+  .line-amount.range{color:var(--muted);font-weight:500;}
+  .line-amount.important{color:var(--coral);}
+  .line-amount.optional{color:var(--muted);font-style:italic;}
+  .line-total{display:flex;justify-content:space-between;align-items:center;padding:14px 0 2px;border-top:2px solid var(--border);font-weight:700;font-size:16px;}
+  .line-total-amount{font-family:'Montserrat',system-ui,sans-serif;font-size:22px;font-weight:800;color:var(--coral);font-variant-numeric:tabular-nums;}
+
+  /* SCHL breakdown */
+  .schl-block{background:var(--gold-light);border:1px solid var(--gold);border-radius:10px;padding:14px 16px;font-size:13px;display:flex;flex-direction:column;gap:6px;}
+  .schl-row{display:flex;justify-content:space-between;gap:8px;}
+  .schl-row strong{font-weight:700;}
+
+  /* Credit card */
+  .credit-block{background:var(--gold-light);border:1px solid var(--gold);border-radius:10px;padding:14px 16px;font-size:13px;display:flex;flex-direction:column;gap:6px;}
+  .credit-row-line{display:flex;justify-content:space-between;gap:8px;}
+  .credit-net{font-weight:700;font-size:15px;color:var(--green);}
+  .rebate-block{background:#f0faf4;border:1px solid var(--green);border-radius:10px;padding:14px 16px;font-size:13px;display:flex;flex-direction:column;gap:6px;}
+  :root[data-theme="dark"] .rebate-block,:root:not([data-theme="light"]):is([data-theme="dark"],.dark) .rebate-block{background:#0f2d1a;}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .rebate-block{background:#0f2d1a;}}
+  .rebate-row{display:flex;justify-content:space-between;gap:8px;}
+  .rebate-amount{font-weight:700;color:var(--green);}
+
+  /* Tranche breakdown toggle */
+  .sub-section{background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:12px;}
+  .sub-section-title{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px;}
+  .tranche-toggle{font-size:12px;color:var(--gold);cursor:pointer;text-decoration:underline;margin-top:4px;display:inline-block;}
+  .tranche-table{font-size:12px;margin-top:8px;display:none;}
+  .tranche-table.open{display:block;}
+  .tr-row{display:grid;grid-template-columns:1fr auto auto;gap:4px 12px;padding:5px 0;border-bottom:1px solid var(--border);align-items:center;}
+  .tr-row:last-child{border-bottom:none;}
+  .tr-row.inactive{opacity:.35;}
+  .tr-taux{color:var(--muted);text-align:right;}
+  .tr-amt{text-align:right;font-weight:600;}
+  .tr-amt.active{color:var(--coral);}
+
+  /* Eligibility */
+  .elig-box{background:var(--gold-light);border:1px solid var(--gold);border-radius:12px;padding:16px 18px;font-size:13px;}
+  .elig-box h4{font-size:13px;font-weight:700;margin-bottom:8px;}
+  .elig-box ul{padding-left:16px;display:flex;flex-direction:column;gap:5px;}
+
+  /* Note / disclaimer */
+  .note{background:var(--gold-light);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:11px 14px;font-size:12px;color:var(--muted);}
+  .refi-info{display:flex;flex-direction:column;gap:12px;}
+
+  /* CTA */
+  .cta-card{background:var(--navy);border-radius:16px;padding:28px 24px;text-align:center;}
+  .cta-card h3{font-family:'Montserrat',system-ui,sans-serif;font-weight:800;color:#fff;font-size:20px;margin-bottom:8px;}
+  .cta-card p{color:rgba(255,255,255,.65);font-size:14px;margin-bottom:20px;}
+  .btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;padding:12px 28px;border-radius:50px;text-decoration:none;font-size:15px;transition:opacity .15s;}
+  .btn:hover{opacity:.88;}
+  footer{text-align:center;font-size:12px;color:var(--muted);padding-top:8px;}
+  footer a{color:var(--gold);text-decoration:none;}
+  .opt-input-wrap{position:relative;width:120px;flex-shrink:0;}
+  .opt-sym{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px;pointer-events:none;}
+  .opt-input{width:100%;padding:8px 10px 8px 22px;border:1.5px solid var(--border);border-radius:8px;background:var(--bg);color:var(--fg);font-size:14px;font-family:inherit;text-align:right;transition:border-color .15s;}
+  .opt-input:focus{outline:none;border-color:var(--gold);}
+  .opt-input::placeholder{color:var(--border);text-align:center;}
+  .btn-pdf{background:transparent;border:1.5px solid var(--gold);color:var(--gold);font-family:'Montserrat',system-ui,sans-serif;font-size:13px;font-weight:700;padding:9px 20px;border-radius:50px;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:6px;}
+  .btn-pdf:hover{background:var(--gold);color:var(--navy);}
+
+  /* Theme toggle */
+/*HY-SHELL-START*/
+body{padding:0}
+.hy-main{padding:32px 16px 48px}
+@media(min-width:880px){.cta-sticky{top:92px}}
+
+/* NAV (same markup/look as the home page) */
+.hy-nav{position:sticky;top:0;z-index:200;background:rgba(1,35,64,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(213,160,95,.2);padding:14px 0;--dore:#D5A05F;--dore-clair:#DEB583;--bleu-nuit:#012340;font-family:'Montserrat',-apple-system,sans-serif;line-height:1.6}
+.hy-nav .nav-inner{max-width:1640px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+.hy-nav .logo-nav{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:700;font-size:22px;letter-spacing:-.02em;margin-right:24px}
+.hy-nav .logo-nav svg.brand{height:46px;width:auto;display:block;flex-shrink:0}
+@media(max-width:700px){.hy-nav .logo-nav svg.brand{height:34px}}
+.hy-nav .logo-tag{font-weight:500;font-size:12px;letter-spacing:.02em;color:var(--dore-clair);padding-left:12px;margin-left:2px;border-left:1px solid rgba(255,255,255,.25);white-space:nowrap}
+@media(max-width:1500px){.hy-nav .logo-tag{display:none}}
+.hy-nav .nav-links{display:flex;gap:18px;align-items:center}
+.hy-nav .nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.01em;white-space:nowrap;transition:color .2s}
+.hy-nav .nav-links a:hover,.hy-nav .nav-links a.active{color:var(--dore)}
+.hy-nav .nav-cta{background:var(--dore);color:var(--bleu-nuit)!important;padding:10px 20px;border-radius:4px;font-weight:700!important}
+.hy-nav .nav-cta:hover{background:var(--dore-clair)}
+.hy-nav .burger{display:none;background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
+@media(min-width:1441px){.hy-nav .nav-links{gap:14px}.hy-nav .nav-links a{font-size:12.5px}.hy-nav .nav-cta{padding:9px 16px}}
+@media(max-width:1440px){
+  .hy-nav .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--bleu-nuit);flex-direction:column;padding:20px 32px;gap:20px;display:none;border-top:1px solid rgba(213,160,95,.2)}
+  .hy-nav .nav-links.open{display:flex}
+  .hy-nav .burger{display:block}
+}
+.hy-nav .nav-tools{display:flex;align-items:center;gap:8px;margin-left:4px}
+.hy-nav .nav-tools button{font-family:inherit;cursor:pointer;height:34px;border-radius:999px;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.28);transition:border-color .2s,color .2s,background .2s}
+.hy-nav .nav-tools button:hover{border-color:var(--dore)}
+.hy-nav .nav-tools .lang-btn{display:inline-flex;align-items:center;padding:3px;gap:2px;font-size:11.5px;font-weight:700;letter-spacing:.06em}
+.hy-nav .nav-tools .lang-btn span{padding:0 10px;height:26px;display:inline-flex;align-items:center;border-radius:999px;color:rgba(255,255,255,.7)}
+.hy-nav .nav-tools .lang-btn span.on{background:var(--dore);color:#012340}
+.hy-nav .nav-tools .theme-btn{width:34px;display:grid;place-items:center;padding:0}
+.hy-nav .nav-tools .theme-btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hy-nav .nav-tools .theme-btn:hover{color:var(--dore)}
+.hy-nav .theme-btn .i-moon{display:none}
+[data-theme="dark"] .hy-nav .theme-btn .i-sun{display:none}
+[data-theme="dark"] .hy-nav .theme-btn .i-moon{display:block}
+@media(max-width:1440px){.hy-nav .nav-tools{order:-1;margin:0}}
+
+/* HERO */
+.hy-hero{background:linear-gradient(135deg,#012340 0%,#093162 100%);color:#fff;padding:44px 16px 40px;position:relative;overflow:hidden}
+.hy-hero::after{content:"";position:absolute;right:-90px;top:-110px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(213,160,95,.22),transparent 68%);pointer-events:none}
+.hy-hero-in{max-width:980px;margin:0 auto;position:relative;z-index:1}
+.hy-back{display:inline-block;color:rgba(255,255,255,.7);text-decoration:none;font-size:13px;font-weight:600;margin-bottom:18px}
+.hy-back:hover{color:#D5A05F}
+.hy-eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#D5A05F}
+.hy-hero .page-title{color:#fff;font-size:clamp(28px,4.6vw,46px);font-weight:800;letter-spacing:-.02em;line-height:1.12;margin:8px 0 12px}
+.hy-hero .page-sub{color:rgba(255,255,255,.8);font-size:16px;max-width:62ch}
+.hy-tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.hy-tools a{display:inline-flex;align-items:center;color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:9px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.3);transition:border-color .2s,color .2s}
+.hy-tools a:hover{border-color:#D5A05F;color:#D5A05F}
+.hy-tools a[aria-current="page"]{background:#D5A05F;border-color:#D5A05F;color:#012340}
+
+/* Palette aligned on the main site */
+:root{--navy:#012340;--gold:#D5A05F;--bg:#F7F3EC;--fg:#012340;--gold-light:#F3E7D6;--border:#E0D8CA}
+:root[data-theme="dark"]{--bg:#071626;--fg:#E6EDF4;--card:#0F2842;--border:#1F4A70;--muted:#A7B6C5;--gold-light:#16304A;--navy:#012340;color-scheme:dark}
+:root[data-theme="dark"] .hero-tile,:root[data-theme="dark"] .cta-card{background:#012340}
+
+/* Modal CTA shown before the PDF export */
+.hy-modal[hidden]{display:none!important}
+.hy-modal{position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(1,20,36,.7);backdrop-filter:blur(3px)}
+.hy-modal-box{background:#012340;color:#fff;border-radius:16px;max-width:460px;width:100%;padding:32px 28px 24px;text-align:center;box-shadow:0 24px 64px rgba(0,0,0,.45);border-top:3px solid #D5A05F;position:relative}
+.hy-modal-box h2{font-weight:800;font-size:22px;line-height:1.25;margin-bottom:10px;letter-spacing:-.01em}
+.hy-modal-box p{color:rgba(255,255,255,.78);font-size:14.5px;margin-bottom:20px}
+.hy-modal-actions{display:flex;flex-direction:column;gap:10px}
+.hy-modal-actions .btn{display:block;padding:14px 20px}
+.hy-modal-tel{display:block;color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:12px;border:1.5px solid rgba(255,255,255,.35);border-radius:50px}
+.hy-modal-tel:hover{border-color:#D5A05F;color:#D5A05F}
+.hy-modal-skip{background:none;border:0;color:rgba(255,255,255,.75);font-family:inherit;font-size:13.5px;font-weight:600;text-decoration:underline;cursor:pointer;padding:10px;margin-top:4px}
+.hy-modal-skip:hover{color:#D5A05F}
+.hy-modal-x{position:absolute;top:8px;right:12px;background:none;border:0;color:rgba(255,255,255,.6);font-size:26px;line-height:1;cursor:pointer;padding:6px}
+.hy-modal-x:hover{color:#fff}
+/*HY-SHELL-END*/
+/*HY-BOOK-START*/
+.logo-firm{display:flex;flex-direction:column;justify-content:center;line-height:1.15;padding-left:12px;margin-left:2px;border-left:1px solid rgba(255,255,255,.25);white-space:nowrap}
+.logo-firm b{font-weight:700;font-size:14px;color:#fff;letter-spacing:.01em}
+.logo-firm small{font-size:9.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--dore-clair,#E8C48D)}
+@media(max-width:1540px){.logo-firm small{display:none}}
+@media(max-width:700px){.logo-firm{padding-left:9px}.logo-firm b{font-size:12.5px}.logo-firm small{display:none}}
+.hy-book{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(1,20,40,.62);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.hy-book.open{display:flex}
+.hy-book .hy-book-card{width:100%;max-width:460px;max-height:calc(100vh - 32px);overflow:auto;background:#fff;color:#012340;border-radius:14px;box-shadow:0 24px 64px rgba(0,0,0,.4);text-align:left}
+.hy-book .hy-view{display:none}
+.hy-book .hy-view.on{display:block}
+.hy-book .hy-book-head{position:relative;background:linear-gradient(135deg,#012340,#093162);color:#fff;padding:20px 52px 18px 22px;border-bottom:3px solid #D5A05F}
+.hy-book .hy-book-head h2{margin:0 0 4px;padding:0;font-family:inherit;font-size:22px;font-weight:700;line-height:1.2;letter-spacing:normal;color:#fff}
+.hy-book .hy-book-head p{margin:0;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.82)}
+.hy-book .hy-book-x{position:absolute;top:10px;right:10px;width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;font-size:22px;line-height:1;cursor:pointer}
+.hy-book .hy-book-x:hover{background:rgba(255,255,255,.22)}
+.hy-book .hy-book-body{padding:18px 22px 18px;display:grid;gap:12px}
+.hy-book .hy-opt{display:block;text-decoration:none;color:inherit;border:1px solid #d5dde7;border-radius:10px;padding:14px 16px;transition:border-color .15s,box-shadow .15s}
+.hy-book .hy-opt:hover,.hy-book .hy-opt:focus-visible{border-color:#D5A05F;box-shadow:0 4px 14px rgba(1,35,64,.14);outline:none}
+.hy-book .hy-opt.primary{border-color:#D5A05F;background:#fff8ec}
+.hy-book .hy-opt strong{display:block;font-size:16px;font-weight:700}
+.hy-book .hy-opt .d{display:block;font-size:13px;line-height:1.4;color:#4a5b6e;margin:3px 0 8px}
+.hy-book .hy-opt .go{display:block;font-size:13.5px;font-weight:700;color:#012340}
+.hy-book .hy-book-or{margin:2px 0 0;text-align:center;font-size:13.5px;color:#4a5b6e}
+.hy-book .hy-book-or a{color:#012340;font-weight:700;text-decoration:none;border-bottom:1px solid #D5A05F}
+.hy-book .hy-book-firm{margin:0;padding:12px 22px;border-top:1px solid #e6ebf1;background:#f6f8fb;text-align:center;font-size:11.5px;line-height:1.4;color:#5b6b7e}
+.hy-book .hy-form{display:grid;gap:10px;padding:18px 22px 8px;margin:0}
+.hy-book .hy-in{display:block;width:100%;box-sizing:border-box;margin:0;font:inherit;font-size:15px;padding:12px 14px;border:1px solid #cfd8e3;border-radius:10px;background:#fff;color:#012340}
+.hy-book textarea.hy-in{min-height:84px;resize:vertical}
+.hy-book .hy-in::placeholder{color:#8795a6}
+.hy-book .hy-in:focus{outline:none;border-color:#D5A05F;box-shadow:0 0 0 3px rgba(213,160,95,.25)}
+.hy-book .hy-chk{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;line-height:1.4;color:#4a5b6e;cursor:pointer}
+.hy-book .hy-chk input{margin:2px 0 0;flex:0 0 auto;width:16px;height:16px;accent-color:#D5A05F}
+.hy-book .hy-priv{margin:-2px 0 0 25px;font-size:12px}
+.hy-book .hy-priv a{color:#4a5b6e;text-decoration:underline}
+.hy-book .hy-err{display:none;margin:0;font-size:12.5px;line-height:1.35;color:#b3261e}
+.hy-book .hy-err.on{display:block}
+.hy-book .hy-submit{border:0;border-radius:10px;background:#D5A05F;color:#012340;font:inherit;font-weight:700;font-size:15px;padding:13px;cursor:pointer;transition:background .15s}
+.hy-book .hy-submit:hover{background:#E8C48D}
+.hy-book .hy-submit:disabled{opacity:.6;cursor:default}
+.hy-book .hy-back{display:block;margin:0 auto;padding:8px 22px 16px;border:0;background:none;font:inherit;font-size:13px;color:#5b6b7e;cursor:pointer}
+.hy-book .hy-back:hover{color:#012340}
+.hy-book .hy-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+[data-theme="dark"] .hy-book .hy-book-card{background:#0d2540;color:#eaf0f7}
+[data-theme="dark"] .hy-book .hy-opt{border-color:rgba(255,255,255,.16)}
+[data-theme="dark"] .hy-book .hy-opt.primary{background:rgba(213,160,95,.12);border-color:#D5A05F}
+[data-theme="dark"] .hy-book .hy-opt .d,[data-theme="dark"] .hy-book .hy-book-or,[data-theme="dark"] .hy-book .hy-chk,[data-theme="dark"] .hy-book .hy-priv a,[data-theme="dark"] .hy-book .hy-back{color:#a9b8c9}
+[data-theme="dark"] .hy-book .hy-opt .go,[data-theme="dark"] .hy-book .hy-book-or a{color:#E8C48D}
+[data-theme="dark"] .hy-book .hy-book-firm{background:rgba(255,255,255,.04);border-top-color:rgba(255,255,255,.1);color:#93a4b8}
+[data-theme="dark"] .hy-book .hy-in{background:#0a1d33;border-color:rgba(255,255,255,.18);color:#eaf0f7}
+[data-theme="dark"] .hy-book .hy-in::placeholder{color:#7d8da1}
+[data-theme="dark"] .hy-book .hy-err{color:#ff8a80}
+.hy-fab{position:fixed;right:22px;bottom:22px;z-index:400;display:inline-flex;align-items:center;gap:9px;padding:15px 24px;border-radius:999px;background:linear-gradient(135deg,#E8C48D,#D5A05F 55%,#C48B45);color:#012340!important;font-weight:700;font-size:15.5px;line-height:1;font-family:inherit;text-decoration:none;letter-spacing:.01em;box-shadow:0 8px 24px rgba(1,35,64,.35),0 0 0 0 rgba(213,160,95,.7);animation:hyGlow 2.4s ease-out infinite;overflow:hidden;transition:transform .2s}
+.hy-fab:hover{transform:translateY(-2px) scale(1.04)}
+.hy-fab::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:hyShine 4s ease-in-out infinite}
+.hy-fab i{width:9px;height:9px;border-radius:50%;background:#1f9d55;animation:hyDot 1.8s infinite}
+.hy-book.open ~ .hy-fab{display:none}
+@keyframes hyGlow{0%{box-shadow:0 8px 24px rgba(1,35,64,.35),0 0 0 0 rgba(213,160,95,.65)}70%{box-shadow:0 8px 24px rgba(1,35,64,.35),0 0 0 18px rgba(213,160,95,0)}100%{box-shadow:0 8px 24px rgba(1,35,64,.35),0 0 0 0 rgba(213,160,95,0)}}
+@keyframes hyShine{0%,55%{left:-60%}100%{left:130%}}
+@keyframes hyDot{0%{box-shadow:0 0 0 0 rgba(31,157,85,.7)}70%{box-shadow:0 0 0 8px rgba(31,157,85,0)}100%{box-shadow:0 0 0 0 rgba(31,157,85,0)}}
+@media(max-width:700px){.hy-fab{right:50%;transform:translateX(50%);bottom:calc(14px + env(safe-area-inset-bottom));padding:15px 28px;white-space:nowrap}.hy-fab:hover{transform:translateX(50%) scale(1.03)}body{padding-bottom:84px}}
+@media(prefers-reduced-motion:reduce){.hy-fab,.hy-fab::after,.hy-fab i{animation:none}}
+@media print{.hy-fab{display:none}}
+/*HY-BOOK-END*/
+/*HY-PRINT-CSS*/
+#hySheet{display:none}
+@page{size:letter;margin:0}
+@media print{
+  html,body{background:#fff!important;margin:0!important;padding:0!important}
+  body>*:not(#hySheet){display:none!important}
+  #hySheet{display:flex!important;flex-direction:column;min-height:10.85in;color:#0d1f3c;font-family:'Montserrat',system-ui,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #hySheet *{box-sizing:border-box}
+  .ps-head{background:#0d1f3c;color:#fff;padding:.34in .6in .24in;border-bottom:3px solid #d49f5e}
+  .ps-eye{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#d49f5e;font-weight:700}
+  .ps-name{font-weight:800;font-size:26px;margin:6px 0 2px;color:#fff}
+  .ps-role{font-size:12px;color:#c9d4e4}
+  .ps-contact{margin-top:10px;font-size:11.5px;color:#fff;display:flex;gap:18px;flex-wrap:wrap}
+  .ps-body{flex:1;padding:.25in .6in .3in}
+  .ps-body h2{font-weight:700;font-size:14px;margin:20px 0 4px;padding-bottom:6px;border-bottom:1px solid #d49f5e;color:#0d1f3c;text-transform:none;letter-spacing:0}
+  .ps-body h2:first-child{margin-top:0}
+  .ps-r{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:4px 0;border-bottom:1px solid #ecdcc3;font-size:12px}
+  .ps-r span{color:#41536b}.ps-r b{color:#0d1f3c;font-weight:700;text-align:right}
+  .ps-r b.gold{color:#d49f5e}.ps-r b.red{color:#c0392b}.ps-r b.green{color:#1f8a4c}
+  .ps-r.big{padding:10px 0}.ps-r.big span{font-weight:700;color:#0d1f3c;font-size:13px}.ps-r.big b{font-size:24px}
+  .ps-note{margin:8px 0 0;font-size:10.5px;color:#41536b;font-style:italic}
+  .ps-disc{margin:22px .6in 0;background:#e8eef7;border-radius:8px;padding:11px 14px;font-size:10px;line-height:1.5;color:#41536b}
+  .ps-disc p{margin:0 0 6px}.ps-disc p:last-child{margin:0}
+  .ps-foot{margin-top:0;background:#0d1f3c;color:#c9d4e4;padding:.18in .6in;font-size:10px;display:flex;justify-content:space-between;gap:20px}
+  .ps-foot b{color:#fff;font-weight:600}
+}
+/*/HY-PRINT-CSS*/
+</style>
+</head>
+<body>
+<!--HY-BOOK-->
+<div class="hy-book" id="hyBook" role="dialog" aria-modal="true" aria-labelledby="hyBookTitle">
+  <div class="hy-book-card">
+
+    <div class="hy-view on" data-view="choose">
+      <div class="hy-book-head">
+        <h2 id="hyBookTitle">Parlons de votre projet</h2>
+        <p>Un premier appel, sans engagement. Choisissez comment on commence.</p>
+        <button type="button" class="hy-book-x" aria-label="Fermer">&times;</button>
+      </div>
+      <div class="hy-book-body">
+        <a class="hy-opt primary" data-focus href="https://outlook.office.com/bookwithme/user/9647bd2d5a0140968751463b3830caad@planipret.com?anonymous&ismsaljsauthenabled&ep=pcard" target="_blank" rel="noopener">
+          <strong>Choisir mon heure</strong>
+          <span class="d">Réservez directement dans mon agenda.</span>
+          <span class="go">Voir mes disponibilités (nouvel onglet) →</span>
+        </a>
+        <a class="hy-opt" href="#" data-go="form">
+          <strong>Me faire rappeler</strong>
+          <span class="d">Un court formulaire, je vous appelle ensuite.</span>
+          <span class="go">Consultation gratuite →</span>
+        </a>
+        <p class="hy-book-or"><span>Ou appelez-moi directement :</span> <a href="tel:+15149001720">(514) 900-1720</a></p>
+      </div>
+      <p class="hy-book-firm">Simon Labrecque, courtier hypothécaire · Permis AMF #234768</p>
+    </div>
+
+    <div class="hy-view" data-view="form">
+      <div class="hy-book-head">
+        <h2>Consultation gratuite</h2>
+        <p>Sans engagement. Je vous rappelle personnellement.</p>
+        <button type="button" class="hy-book-x" aria-label="Fermer">&times;</button>
+      </div>
+      <form class="hy-form" id="hyIntake" novalidate>
+        <input class="hy-in" data-focus type="text" name="noms" autocomplete="name" placeholder="Votre nom complet" aria-label="Votre nom complet">
+        <input class="hy-in" type="email" name="courriel" autocomplete="email" placeholder="Votre courriel" aria-label="Votre courriel">
+        <input class="hy-in" type="tel" name="telephone" autocomplete="tel" inputmode="tel" placeholder="(514) 555-1234" aria-label="(514) 555-1234">
+        <select class="hy-in" name="projet" aria-label="Type de projet">
+          <option value="">Type de projet</option>
+          <option value="achat">Achat</option>
+          <option value="renouvellement">Renouvellement</option>
+          <option value="refinancement">Refinancement</option>
+          <option value="consolidation">Consolidation de dettes</option>
+          <option value="autre">Autre</option>
+        </select>
+        <textarea class="hy-in" name="notes" placeholder="Parlez-moi de votre projet (optionnel)" aria-label="Parlez-moi de votre projet (optionnel)"></textarea>
+        <input class="hy-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="hy-chk"><input type="checkbox" name="consent"><span>J'accepte d'être contacté par Simon Labrecque au sujet de ma demande et qu'il reçoive les chiffres saisis dans le calculateur.</span></label>
+        <div class="hy-priv"><a href="https://www.planipret.com/fr/politique-de-confidentialite" target="_blank" rel="noopener">Politique de confidentialité</a></div>
+        <p class="hy-err" id="hyErr">Merci de remplir votre nom, un courriel valide et un téléphone, et d'accepter d'être contacté.</p>
+        <button type="submit" class="hy-submit" id="hySend">Demander ma consultation gratuite</button>
+      </form>
+      <button type="button" class="hy-back" data-go="choose">← Retour</button>
+      <p class="hy-book-firm">Simon Labrecque, courtier hypothécaire · Permis AMF #234768</p>
+    </div>
+
+    <div class="hy-view" data-view="done">
+      <div class="hy-book-head">
+        <h2>Merci! C'est reçu.</h2>
+        <p>Je vous appelle personnellement. Si vous préférez, choisissez directement une heure.</p>
+        <button type="button" class="hy-book-x" aria-label="Fermer">&times;</button>
+      </div>
+      <div class="hy-book-body">
+        <a class="hy-opt primary" data-focus href="https://outlook.office.com/bookwithme/user/9647bd2d5a0140968751463b3830caad@planipret.com?anonymous&ismsaljsauthenabled&ep=pcard" target="_blank" rel="noopener">
+          <strong>Choisir mon heure</strong>
+          <span class="d">Réservez directement dans mon agenda.</span>
+          <span class="go">Voir mes disponibilités (nouvel onglet) →</span>
+        </a>
+        <p class="hy-book-or"><span>Ou appelez-moi directement :</span> <a href="tel:+15149001720">(514) 900-1720</a></p>
+      </div>
+      <p class="hy-book-firm">Simon Labrecque, courtier hypothécaire · Permis AMF #234768</p>
+    </div>
+
+  </div>
+</div>
+<script>
+window.HY_CONFIG = window.HY_CONFIG || {
+  powerAutomateUrl: 'VOTRE_URL_POWER_AUTOMATE_ICI',
+  fallbackEmail: 'slabrecque@planipret.com',
+  mode: 'email'  // 'email', 'power-automate', ou 'both'
+};
+(function(){
+  var m=document.getElementById('hyBook');if(!m)return;
+  var last=null,src='',CFG=window.HY_CONFIG;
+  function isEn(){return (document.documentElement.lang||'').toLowerCase().indexOf('en')===0;}
+  function show(v){
+    var views=m.querySelectorAll('.hy-view');
+    for(var i=0;i<views.length;i++)views[i].classList.toggle('on',views[i].getAttribute('data-view')===v);
+    setTimeout(function(){var f=m.querySelector('.hy-view.on [data-focus]');if(f)f.focus();},30);
+  }
+  function open(v){
+    if(!m.classList.contains('open'))last=document.activeElement;
+    m.classList.add('open');document.documentElement.style.overflow='hidden';
+    var nl=document.getElementById('navlinks');if(nl)nl.classList.remove('open');
+    show(v||'choose');
+  }
+  function hide(){m.classList.remove('open');document.documentElement.style.overflow='';}
+  function close(){hide();if(last&&last.focus)last.focus();}
+  window.hyBookOpen=function(v){open(v||'choose');};
+  function srcOf(h){var x=/[?&]src=([^&#]+)/.exec(h||'');return x?decodeURIComponent(x[1]):'';}
+
+  document.addEventListener('click',function(e){
+    var t=e.target.closest&&e.target.closest('[data-book]');
+    if(t){e.preventDefault();open('choose');return;}
+    var a=e.target.closest&&e.target.closest('a[href*="#intake"]');
+    if(a&&!a.target&&!m.contains(a)){e.preventDefault();src=srcOf(a.getAttribute('href'));open('choose');return;}
+    if(!m.classList.contains('open'))return;
+    var g=e.target.closest('[data-go]');
+    if(g){e.preventDefault();show(g.getAttribute('data-go'));return;}
+    if(e.target===m||e.target.closest('.hy-book-x'))close();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))close();});
+
+  var f=document.getElementById('hyIntake'),err=document.getElementById('hyErr'),btn=document.getElementById('hySend');
+  f.telephone.addEventListener('input',function(e){
+    var v=e.target.value.replace(/\D/g,'').slice(0,10),o='';
+    if(v.length>0)o='('+v.slice(0,3);
+    if(v.length>=4)o+=') '+v.slice(3,6);
+    if(v.length>=7)o+='-'+v.slice(6,10);
+    e.target.value=o;
+  });
+  // --- calculator scenario capture (calculateur / frais) ---
+  var SC_IN=['capRevenu','capDettes','capAuto','capAutoFreq','capMarge','capCarte','capPerso','capPersoFreq','capEtud','capMise','capTaux','capAmort','capPA','capTaxes','capChauffage','capCondo','capProfil','prix','mise','eval','dateActe','ville','premierAcheteur','maisonNeuve','refiValeur','refiMontant','consoToggle','taux','terme','changePreteur','optDemenagement','optAmeublement','trToggle','trConsoToggle','payFreq'];
+  var SC_OUT=['capPrix','capHypo','capABD','capATD','payAmount','dMontant','dTaux','dAmort','dCoutTotal','dInteretsTotal','totalCash','heroTotal','trTotal'];
+  function scenario(){
+    var o={page:location.pathname,inputs:{},results:{}},n=0;
+    SC_IN.forEach(function(id){var e=document.getElementById(id);if(!e)return;
+      var v=e.type==='checkbox'?(e.checked?'oui':''):e.value;if(v!==''){o.inputs[id]=v;n++;}});
+    SC_OUT.forEach(function(id){var e=document.getElementById(id);if(e&&e.textContent.trim())o.results[id]=e.textContent.trim().replace(/\s+/g,' ');});
+    ['btnAchat','btnRefi','formAchat','formRefi','formRenouv'].forEach(function(id){var e=document.getElementById(id);
+      if(e&&(e.classList.contains('active')||e.classList.contains('on')||(e.offsetParent!==null&&/^form/.test(id))))o.mode=(o.mode?o.mode+',':'')+id;});
+    return n?o:null;
+  }
+  function saveSc(){try{var o=scenario();if(o){o.ts=Date.now();localStorage.setItem('hy-scenario',JSON.stringify(o));}}catch(x){}}
+  function getSc(){var o=scenario();if(o)return o;
+    try{var t=JSON.parse(localStorage.getItem('hy-scenario')||'null');if(t&&Date.now()-t.ts<6*3600e3)return t;}catch(x){}return null;}
+  function scText(o){if(!o)return '';var l=['','— Scénario calculé ('+o.page+') —'];
+    Object.keys(o.inputs).forEach(function(k){l.push('  '+k+' : '+o.inputs[k]);});
+    Object.keys(o.results).forEach(function(k){l.push('  => '+k+' : '+o.results[k]);});return l.join('\n');}
+  var scT=null;document.addEventListener('input',function(){clearTimeout(scT);scT=setTimeout(saveSc,600);});
+  document.addEventListener('change',function(){clearTimeout(scT);scT=setTimeout(saveSc,600);});
+  document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('a,button'))saveSc();},true);
+  f.addEventListener('submit',async function(e){
+    e.preventDefault();
+    var d={noms:f.noms.value.trim(),courriel:f.courriel.value.trim(),telephone:f.telephone.value.trim(),
+      projet:f.projet.value,notes:f.notes.value.trim()};
+    var ok=d.noms.length>1&&/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.courriel)&&d.telephone.replace(/\D/g,'').length===10&&f.consent.checked;
+    err.classList.toggle('on',!ok);
+    if(!ok)return;
+    if(f.website.value){show('done');return;}   // honeypot: pretend success
+    btn.disabled=true;btn.textContent=isEn()?'Sending...':'Envoi en cours...';
+    var data={noms:d.noms,courriel:d.courriel,telephone:d.telephone,projet:d.projet,notes:d.notes,
+      detenues:'',visee:'',revenu:'',scenario:getSc(),consentement:true,
+      source:'hypolite.ca'+location.pathname+(src?'?src='+src:''),
+      trigger:'hypotheque123go',timestamp:new Date().toISOString()};
+    try{
+      if(CFG.mode==='power-automate'||CFG.mode==='both'){
+        await fetch(CFG.powerAutomateUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+      }
+      show('done');
+      if(CFG.mode==='email'){
+        var subject=encodeURIComponent('hypotheque123go — '+data.noms);
+        var body=encodeURIComponent('Nouvelle demande depuis hypolite.ca ('+data.source+')\n\n'
+          +'— Nom : '+data.noms+'\n— Courriel : '+data.courriel+'\n— Cellulaire : '+data.telephone
+          +'\n— Projet : '+(data.projet||'Non précisé')+'\n\n— Notes :\n'+(data.notes||'Aucune')+scText(data.scenario)
+          +'\n\n--\nTrigger : '+data.trigger+'\nSoumis : '+data.timestamp);
+        window.location.href='mailto:'+CFG.fallbackEmail+'?subject='+subject+'&body='+body;
+      }
+      f.reset();err.classList.remove('on');
+    }catch(x){
+      console.error(x);
+      alert(isEn()?'An error occurred. Please call us directly at (514) 900-1720.':'Une erreur est survenue. Merci d\'appeler directement au (514) 900-1720.');
+    }
+    btn.disabled=false;btn.textContent=isEn()?'Request my free consultation':'Demander ma consultation gratuite';
+  });
+
+  // landing on /#book or /#intake (e.g. from a PDF or an e-mail) opens the popup instead of scrolling
+  var h=location.hash;
+  if(h==='#book'||h==='#intake'){
+    src=srcOf(location.search);
+    open('choose');
+    try{history.replaceState(null,'',location.pathname+location.search);}catch(x){}
+    window.scrollTo(0,0);
+  }
+})();
+</script>
+<a href="#book" class="hy-fab" data-book onclick="if(window.hyBookOpen){hyBookOpen('choose');return false}" aria-label="Consultation gratuite"><i></i>Consultation gratuite</a>
+<!--/HY-BOOK-->
+
+<!--HY-SHELL-->
+<nav class="hy-nav" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="/" class="logo-nav">
+      <svg class="brand brand-nav" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 729 200" role="img" aria-label="Hypolite"><g id="icon-nav">
+<path d="M18 92 L100 18 L182 92" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-linejoin="miter" stroke-miterlimit="10"/>
+<polygon points="136,22 158,22 158,70.3 136,50.5" fill="#FFFFFF"/>
+<path d="M40 72 V180 H160 V72" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-linejoin="miter" stroke-miterlimit="10"/>
+<clipPath id="win-nav"><path d="M76 164 V132 A24 24 0 0 1 124 132 V164 Z"/></clipPath>
+<g clip-path="url(#win-nav)" fill="#D5A05F">
+<rect x="76" y="100" width="22" height="34"/><rect x="102" y="100" width="22" height="34"/>
+<rect x="76" y="138" width="22" height="30"/><rect x="102" y="138" width="22" height="30"/></g>
+<path d="M67.6 116.2 L54.2 109.6 M80.9 101.5 L73.0 88.7 M100.0 96.0 L100.0 81.0 M119.1 101.5 L127.0 88.7 M132.4 116.2 L145.8 109.6 " stroke="#D5A05F" stroke-width="7" stroke-linecap="round" fill="none"/>
+</g><path d="M291.844 132.0V103.29599999999999H254.86V132.0H245.66V67.6H254.86V95.292H291.844V67.6H301.044V132.0Z M336.91200000000003 132.0V109.55199999999999L311.336 67.6H321.18L341.788 101.456L362.488 67.6H371.596L346.02 109.55199999999999V132.0Z M381.88800000000003 132.0V67.6H407.004Q419.516 67.6 426.692 73.58Q433.868 79.56 433.868 90.048Q433.868 100.536 426.692 106.51599999999999Q419.516 112.496 407.004 112.496H391.088V132.0ZM391.088 104.492H406.728Q415.56 104.492 420.11400000000003 100.72Q424.668 96.94800000000001 424.668 90.048Q424.668 83.148 420.11400000000003 79.376Q415.56 75.604 406.728 75.604H391.088Z M478.384 132.736Q470.932 132.736 464.676 130.252Q458.41999999999996 127.768 453.81999999999994 123.352Q449.21999999999997 118.936 446.644 112.91Q444.068 106.884 444.068 99.8Q444.068 92.71600000000001 446.644 86.69Q449.21999999999997 80.664 453.81999999999994 76.24799999999999Q458.41999999999996 71.832 464.676 69.348Q470.932 66.864 478.384 66.864Q485.74399999999997 66.864 491.95399999999995 69.302Q498.164 71.74000000000001 502.81 76.202Q507.456 80.664 509.986 86.69Q512.516 92.71600000000001 512.516 99.8Q512.516 106.884 509.986 112.91Q507.456 118.936 502.81 123.398Q498.164 127.86 491.95399999999995 130.298Q485.74399999999997 132.736 478.384 132.736ZM478.384 124.548Q485.46799999999996 124.548 491.126 121.328Q496.784 118.108 500.04999999999995 112.49600000000001Q503.316 106.884 503.316 99.8Q503.316 92.71600000000001 500.04999999999995 87.104Q496.784 81.49199999999999 491.126 78.27199999999999Q485.46799999999996 75.05199999999999 478.384 75.05199999999999Q471.116 75.05199999999999 465.45799999999997 78.27199999999999Q459.8 81.49199999999999 456.534 87.104Q453.268 92.71600000000001 453.268 99.8Q453.268 106.884 456.534 112.49600000000001Q459.8 118.108 465.45799999999997 121.328Q471.116 124.548 478.384 124.548Z" fill="#FFFFFF"/><path d="M525.3720000000001 132.0V67.6H543.588V117.556H574.316V132.0Z M582.4920000000001 132.0V67.6H600.708V132.0Z M628.388 132.0V82.04400000000001H608.6080000000001V67.6H666.292V82.04400000000001H646.604V132.0Z M674.1 132.0V67.6H724.608V81.676H692.132V92.53200000000001H720.7439999999999V106.148H692.132V117.924H725.804V132.0Z" fill="#FFFFFF"/></svg>
+      <span class="logo-firm"><b>Planiprêt</b><small>Cabinet en courtage hypothécaire</small></span>
+    </a>
+    <button class="burger" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    <div class="nav-links" id="navlinks">
+      <a href="/#pour-qui">Pour qui</a>
+      <a href="/#comment">Comment ça marche</a>
+      <a href="/a-propos/">À propos</a>
+      <a href="/calculateur/">Calculatrice hypothécaire</a>
+      <a href="/capacite/">Capacité d'emprunt</a>
+      <!--HY-EQ<a href="https://regledupouce.ca/?src=hypolite" rel="noopener">Calculateur d'équité</a>-->
+      <a href="/frais/" class="active" aria-current="page">Frais de transaction</a>
+      <a href="#book" class="nav-cta" data-book onclick="if(window.hyBookOpen){hyBookOpen(&quot;choose&quot;);return false}">Consultation gratuite</a>
+      <div class="nav-tools">
+        <button type="button" class="lang-btn" id="langBtn" aria-label="Changer la langue / Switch language"><span data-l="fr">FR</span><span data-l="en">EN</span></button>
+        <button type="button" class="theme-btn" id="themeBtn" aria-label="Thème sombre / clair"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      </div>
+    </div>
+  </div>
+</nav>
+<header class="hy-hero">
+  <div class="hy-hero-in">
+    <a class="hy-back" href="/">← Accueil</a>
+    <div class="hy-eyebrow">Outil gratuit</div>
+    <h1 class="page-title">Frais de transaction</h1>
+    <p class="page-sub">Estimez tous vos frais à l'achat, au refinancement ou au renouvellement</p>
+    <nav class="hy-tools" aria-label="Outils">
+      <a href="/calculateur/">Calculatrice hypothécaire</a>
+      <a href="/capacite/">Capacité d'emprunt</a>
+      <a href="/frais/" aria-current="page">Frais de transaction</a>
+      <!--HY-EQ<a href="https://regledupouce.ca/?src=hypolite" rel="noopener">Calculateur d'équité ↗</a>-->
+    </nav>
+  </div>
+</header>
+<!--/HY-SHELL-->
+<main class="hy-main">
+<div class="wrapper">
+
+  
+
+  <div class="layout-grid">
+  <div class="main-col">
+  <!-- Transaction type -->
+  <div class="card" style="gap:12px;">
+    <div class="card-title">Type de transaction</div>
+    <div class="type-tabs">
+      <button class="type-tab active" data-type="achat" onclick="setType('achat')">
+        <span class="type-tab-icon">🏠</span>Achat
+      </button>
+      <button class="type-tab" data-type="refi" onclick="setType('refi')">
+        <span class="type-tab-icon">🔁</span>Refinancement
+      </button>
+      <button class="type-tab" data-type="renouv" onclick="setType('renouv')">
+        <span class="type-tab-icon">📋</span>Renouvellement
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ACHAT FORM -->
+  <div id="formAchat" class="card">
+    <div class="card-title">Détails de l'achat</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="prix">Prix d'achat</label>
+        <div class="input-prefix"><span>$</span>
+          <input type="text" id="prix" placeholder="450 000" inputmode="numeric" oninput="calc()">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="mise">Mise de fonds</label>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <div class="input-prefix" style="flex:1;">
+            <span id="misePrefixSym">$</span>
+            <input type="text" id="mise" placeholder="22 500" inputmode="numeric" oninput="calc()">
+          </div>
+          <div class="unit-toggle">
+            <button class="unit-btn active" id="btnDollar" onclick="setUnit('$')">$</button>
+            <button class="unit-btn" id="btnPct" onclick="setUnit('%')">%</button>
+          </div>
+        </div>
+        <span class="form-hint" id="miseHint">≥ 5 % du prix d'achat</span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="eval">Évaluation municipale</label>
+        <div class="input-prefix"><span>$</span>
+          <input type="text" id="eval" placeholder="420 000" inputmode="numeric" oninput="calc()">
+        </div>
+        <span class="form-hint">Facultatif — pour l'ajustement de taxes</span>
+      </div>
+      <div class="form-group">
+        <label for="dateActe">Date de l'acte notarié</label>
+        <input type="date" id="dateActe" oninput="calc()">
+        <span class="form-hint">Facultatif — pour l'ajustement de taxes</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="ville">Municipalité</label>
+      <select id="ville" onchange="calc()">
+        <optgroup label="Montréal">
+          <option value="mtl|0.76">Montréal</option>
+        </optgroup>
+        <optgroup label="Laval">
+          <option value="laval|0.63">Laval</option>
+        </optgroup>
+        <optgroup label="Rive-Nord">
+          <option value="std|0.70">Boisbriand</option>
+          <option value="std|0.70">Blainville</option>
+          <option value="std|0.70">Lorraine</option>
+          <option value="std|0.68">Mirabel</option>
+          <option value="std|0.72">Repentigny</option>
+          <option value="std|0.70">Rosemère</option>
+          <option value="std|0.69">Saint-Eustache</option>
+          <option value="std|0.70">Sainte-Thérèse</option>
+          <option value="std|0.73">Terrebonne</option>
+          <option value="std|0.72">Mascouche</option>
+          <option value="std|0.68">Deux-Montagnes</option>
+          <option value="std|0.71">Saint-Jérôme</option>
+        </optgroup>
+        <optgroup label="West Island / Rive-Ouest">
+          <option value="std|0.65">Baie-D'Urfé</option>
+          <option value="std|0.68">Beaconsfield</option>
+          <option value="std|0.65">Côte-Saint-Luc</option>
+          <option value="std|0.67">Dollard-des-Ormeaux</option>
+          <option value="std|0.69">Dorval</option>
+          <option value="std|0.66">Kirkland</option>
+          <option value="std|0.69">Mont-Royal</option>
+          <option value="std|0.68">Pointe-Claire</option>
+          <option value="std|0.64">Sainte-Anne-de-Bellevue</option>
+          <option value="std|0.68">Vaudreuil-Dorion</option>
+          <option value="std|0.72">Westmount</option>
+        </optgroup>
+        <optgroup label="Rive-Sud">
+          <option value="std|0.65">Brossard</option>
+          <option value="std|0.68">Longueuil</option>
+          <option value="std|0.66">Saint-Bruno-de-Montarville</option>
+          <option value="std|0.65">Saint-Lambert</option>
+          <option value="std|0.67">Saint-Basile-le-Grand</option>
+          <option value="std|0.67">Boucherville</option>
+          <option value="std|0.68">Varennes</option>
+          <option value="std|0.69">Châteauguay</option>
+          <option value="std|0.68">Sainte-Julie</option>
+        </optgroup>
+        <optgroup label="Laurentides">
+          <option value="std|0.72">Mont-Tremblant</option>
+          <option value="std|0.72">Sainte-Agathe-des-Monts</option>
+          <option value="std|0.71">Saint-Sauveur</option>
+          <option value="std|0.69">Lachute</option>
+          <option value="std|0.70">Sainte-Adèle</option>
+          <option value="std|0.68">Morin-Heights</option>
+        </optgroup>
+        <optgroup label="Lanaudière">
+          <option value="std|0.73">Joliette</option>
+          <option value="std|0.71">L'Assomption</option>
+          <option value="std|0.68">Rawdon</option>
+          <option value="std|0.70">Saint-Calixte</option>
+        </optgroup>
+        <optgroup label="Estrie / Cantons-de-l'Est">
+          <option value="std|0.73">Sherbrooke</option>
+          <option value="std|0.68">Magog</option>
+          <option value="std|0.67">Bromont</option>
+          <option value="std|0.69">Granby</option>
+        </optgroup>
+        <optgroup label="Québec (ville)">
+          <option value="std|0.75">Québec</option>
+          <option value="std|0.69">Lévis</option>
+          <option value="std|0.68">Sainte-Marie</option>
+        </optgroup>
+        <optgroup label="Mauricie / Centre-du-Québec">
+          <option value="std|0.76">Trois-Rivières</option>
+          <option value="std|0.72">Drummondville</option>
+          <option value="std|0.70">Victoriaville</option>
+          <option value="std|0.71">Shawinigan</option>
+        </optgroup>
+        <optgroup label="Saguenay–Lac-Saint-Jean">
+          <option value="std|0.73">Saguenay (Chicoutimi)</option>
+          <option value="std|0.69">Alma</option>
+          <option value="std|0.68">Saint-Félicien</option>
+        </optgroup>
+        <optgroup label="Outaouais">
+          <option value="std|0.69">Gatineau</option>
+          <option value="std|0.67">Pontiac</option>
+        </optgroup>
+        <optgroup label="Autre">
+          <option value="std|0.70">Autre municipalité du Québec</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <!-- Toggles -->
+    <div class="toggle-row">
+      <div>
+        <div class="toggle-label">Premier acheteur <span class="pill">NOUVEAU 2026</span></div>
+        <div class="toggle-sub">Crédit d'accès à la propriété — débloque 30 ans</div>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="premierAcheteur" onchange="calc()">
+        <span class="toggle-track"></span>
+      </label>
+    </div>
+    <div class="toggle-row" style="border-top:none;padding-top:0;">
+      <div>
+        <div class="toggle-label">Maison neuve</div>
+        <div class="toggle-sub">Débloque 30 ans (construction neuve)</div>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="maisonNeuve" onchange="calc()">
+        <span class="toggle-track"></span>
+      </label>
+    </div>
+
+    <!-- Amortissement 25/30 ans -->
+    <div class="toggle-row" style="padding-top:14px;">
+      <div style="flex:1;">
+        <div class="toggle-label">Amortissement</div>
+        <div class="amort-conditions" id="amortConditions">
+          <div class="amort-cond" id="condPA"><span class="cond-icon">✗</span>Premier acheteur coché</div>
+          <div class="amort-cond" id="condMN"><span class="cond-icon">✗</span>Maison neuve cochée</div>
+          <div class="amort-cond" id="condConv"><span class="cond-icon">✗</span>Mise de fonds ≥ 20 % (conventionnel)</div>
+        </div>
+      </div>
+      <div class="amort-toggle" style="flex-shrink:0;align-self:flex-start;margin-top:2px;">
+        <button class="amort-btn active" id="btn25" onclick="setAmort(25)">25 ans</button>
+        <button class="amort-btn" id="btn30" onclick="setAmort(30)" disabled>30 ans</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFI FORM -->
+  <div id="formRefi" class="card" hidden>
+    <div class="card-title">Détails du refinancement</div>
+    <div class="refi-info">
+      <div class="form-group">
+        <label>Valeur approximative de la propriété</label>
+        <div class="input-prefix"><span>$</span>
+          <input type="text" id="refiValeur" placeholder="500 000" inputmode="numeric" oninput="calcRefi()">
+        </div>
+      </div>
+      <div class="note">ℹ️ Le refinancement n'implique pas de taxe de bienvenue ni de prime SCHL. Les principaux frais sont les honoraires notariaux et les frais d'évaluation si exigés par le prêteur.</div>
+    </div>
+  </div>
+
+  <!-- RENOUV FORM -->
+  <div id="formRenouv" class="card" hidden>
+    <div class="card-title">Détails du renouvellement</div>
+    <div class="refi-info">
+      <div class="note">ℹ️ Le renouvellement avec le même prêteur est généralement sans frais. Un changement de prêteur peut entraîner des frais notariaux (~500 $) et parfois une évaluation.</div>
+      <div class="toggle-row" style="border-top:none;padding-top:0;">
+        <div>
+          <div class="toggle-label">Changement de prêteur</div>
+          <div class="toggle-sub">Entraîne des frais notariaux supplémentaires</div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="changePreteur" onchange="calcRenouv()">
+          <span class="toggle-track"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="resultsAchat">
+    <!-- Total hero -->
+    <div class="skeleton-hint" id="skeletonHint">👆 Entrez un prix d'achat ci-dessus pour estimer vos frais</div>
+    <div class="result-hero" style="border-radius:16px;margin-bottom:12px;">
+      <div>
+        <div class="result-hero-label">Total estimé des frais de fermeture</div>
+        <div class="result-hero-sub" id="heroSub"></div>
+      </div>
+      <div class="result-hero-amount" id="heroTotal">—</div>
+    </div>
+
+    <!-- Breakdown card -->
+    <div class="card">
+      <div class="card-title">Détail des frais</div>
+
+      <!-- Taxe de bienvenue -->
+      <div class="sub-section">
+        <div class="sub-section-title">🏛️ Taxe de bienvenue (droits de mutation)</div>
+        <div class="line-item" style="border-bottom:none;padding-bottom:0;">
+          <div>
+            <div class="line-name">Montant brut</div>
+            <div class="line-sub" id="txbSub">Droits de mutation 2026</div>
+          </div>
+          <div class="line-amount important" id="txbAmount">—</div>
+        </div>
+        <span class="tranche-toggle" onclick="toggleTranches()">Voir le détail des tranches ▾</span>
+        <div class="tranche-table" id="trancheTable"></div>
+
+        <!-- Credit premier acheteur -->
+        <div id="creditBlock" hidden style="margin-top:10px;">
+          <div class="credit-block">
+            <div style="font-weight:700;font-size:13px;margin-bottom:4px;">💰 Crédit premier acheteur 2026</div>
+            <div class="credit-row-line"><span>100 % des premiers 5 000 $</span><span id="cred1">—</span></div>
+            <div class="credit-row-line"><span>25 % du prochain 3 500 $</span><span id="cred2">—</span></div>
+            <div class="credit-row-line" id="phaseoutRow" hidden><span>Réduction progressive (> 750 000 $)</span><span id="credPhaseout" style="color:var(--red);">—</span></div>
+            <div class="credit-row-line" style="border-top:1px solid var(--border);padding-top:6px;margin-top:2px;">
+              <span class="credit-net">Remboursement net</span>
+              <span class="credit-net" id="credNet">—</span>
+            </div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px;">Remboursement sur votre prochain rapport d'impôt provincial</div>
+          </div>
+          <div class="elig-box" style="margin-top:10px;">
+            <h4>🔎 Conditions d'admissibilité</h4>
+            <ul>
+              <li>Ne pas avoir été propriétaire d'une résidence principale au cours des <strong>5 dernières années</strong></li>
+              <li>Habiter la propriété comme résidence principale dans les <strong>12 mois</strong> suivant l'achat</li>
+              <li>Prix d'achat ≤ 1 000 000 $ (crédit = 0 $ au-dessus)</li>
+              <li>S'applique sur la portion <em>remboursable</em> de votre déclaration de revenus QC</li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- /sub-section taxe bienvenue -->
+
+      <!-- SCHL -->
+      <div id="schlSection">
+        <div class="line-item">
+          <div>
+            <div class="line-name">Prime SCHL</div>
+            <div class="line-sub" id="schlSub">Assurance hypothécaire</div>
+          </div>
+          <div class="line-amount important" id="schlAmount">—</div>
+        </div>
+        <div id="schlBlock" hidden class="schl-block" style="margin-top:4px;">
+          <div class="schl-row"><span>Prêt assuré</span><strong id="sb1">—</strong></div>
+          <div class="schl-row"><span>MDP (%)</span><strong id="sb2">—</strong></div>
+          <div class="schl-row"><span>Taux de prime</span><strong id="sb3">—</strong></div>
+          <div id="sb30Row" class="schl-row" hidden><span>Option 30 ans (+0,20 %)</span><strong style="color:var(--gold);">Inclus</strong></div>
+          <div class="schl-row" style="border-top:1px solid var(--border);padding-top:6px;margin-top:2px;"><span>Prime totale</span><strong id="sb4">—</strong></div>
+          <div class="schl-row"><span style="font-size:11px;color:var(--muted);">Ajoutée au solde du prêt</span></div>
+        </div>
+
+        <!-- TVQ on SCHL -->
+        <div class="line-item" id="tvqLine" hidden>
+          <div>
+            <div class="line-name">TVQ sur prime SCHL</div>
+            <div class="line-sub">9,975 % — payable comptant à la clôture</div>
+          </div>
+          <div class="line-amount important" id="tvqAmount">—</div>
+        </div>
+      </div>
+
+      <!-- Maison neuve rebates -->
+      <div id="maisonneuveBlock" hidden>
+        <div class="sub-section" style="border:1.5px solid var(--green);">
+          <div class="sub-section-title" style="color:var(--green);">🏗️ Remboursements — habitation neuve</div>
+          <div class="line-item">
+            <div>
+              <div class="line-name">Remboursement TPS fédéral</div>
+              <div class="line-sub" id="tpsRebateSub">36 % de la TPS (5 %) — max 6 300 $</div>
+            </div>
+            <div class="line-amount rebate-amount" id="tpsRebateAmount">—</div>
+          </div>
+          <div class="line-item" style="border-bottom:none;padding-bottom:0;">
+            <div>
+              <div class="line-name">Remboursement TVQ provincial (QC)</div>
+              <div class="line-sub" id="tvqRebateSub">36 % de la TVQ (9,975 %) — max ~10 773 $</div>
+            </div>
+            <div class="line-amount rebate-amount" id="tvqRebateAmount">—</div>
+          </div>
+        </div>
+        <div class="note" style="margin-top:-4px;margin-bottom:4px;">Ces remboursements s'appliquent si vous occupez la propriété comme <strong>résidence principale</strong>. La TPS/TVQ est généralement incluse dans le prix de vente du constructeur — les rebates réduisent votre coût net.</div>
+      </div>
+
+      <!-- Notaire -->
+      <div class="line-item">
+        <div>
+          <div class="line-name">Honoraires notariaux</div>
+          <div class="line-sub">Achat résidentiel — varie selon la complexité</div>
+        </div>
+        <div class="line-amount range">1 800 $ – 3 000 $</div>
+      </div>
+
+      <!-- Inspection -->
+      <div class="line-item">
+        <div>
+          <div class="line-name">Inspection préachat</div>
+          <div class="line-sub">Fortement recommandée</div>
+        </div>
+        <div class="line-amount range">~1 000 $</div>
+      </div>
+
+      <!-- Évaluation -->
+      <div class="line-item">
+        <div>
+          <div class="line-name">Évaluation (commandée par le prêteur)</div>
+          <div class="line-sub">Peut être à la charge de l'acheteur</div>
+        </div>
+        <div class="line-amount range">~500 $</div>
+      </div>
+
+      <!-- Tax adjustment -->
+      <div class="line-item" id="taxAdjLine">
+        <div>
+          <div class="line-name">Ajustement taxes municipales</div>
+          <div class="line-sub" id="taxAdjSub">Remboursement au vendeur — estimé</div>
+        </div>
+        <div class="line-amount range" id="taxAdjAmount">—</div>
+      </div>
+      <div class="line-item" id="scolAdjLine">
+        <div>
+          <div class="line-name">Ajustement taxes scolaires</div>
+          <div class="line-sub" id="scolAdjSub">~10 % des taxes munic. — estimé</div>
+        </div>
+        <div class="line-amount range" id="scolAdjAmount">—</div>
+      </div>
+
+      <div class="note" id="taxNote" style="margin-top:4px;display:none;">⚠️ Les taux de taxation utilisés sont des <strong>estimés régionaux</strong> — l'ajustement réel sera calculé par le notaire selon les comptes de taxes officiels.</div>
+
+      <!-- Optional extras (shown when filled) -->
+      <div class="line-item" id="optDemenLine" hidden>
+        <div>
+          <div class="line-name">Déménagement</div>
+          <div class="line-sub">Votre estimation</div>
+        </div>
+        <div class="line-amount" id="optDemenAmt">—</div>
+      </div>
+      <div class="line-item" id="optAmeubLine" hidden>
+        <div>
+          <div class="line-name">Ameublement / peinture</div>
+          <div class="line-sub">Votre estimation</div>
+        </div>
+        <div class="line-amount" id="optAmeubAmt">—</div>
+      </div>
+
+      <!-- TOTAL -->
+      <div class="line-total">
+        <span>Total estimé (frais comptant)</span>
+        <span class="line-total-amount" id="totalCash">—</span>
+      </div>
+      <div class="note" style="margin-top:8px;">La prime SCHL est ajoutée à votre prêt et n'est pas incluse dans le total comptant ci-dessus. Le total comptant exclut aussi les frais à fourchette (notaire, inspection, évaluation) — prévoir une marge.</div>
+    </div>
+
+    <!-- Optional items -->
+    <div class="card" style="margin-top:0;">
+      <div class="card-title">Frais optionnels à considérer</div>
+
+      <!-- Déménagement — input -->
+      <div class="line-item">
+        <div>
+          <div class="line-name">Déménagement</div>
+          <div class="line-sub">Votre estimation — ajouté au total si renseigné</div>
+        </div>
+        <div class="opt-input-wrap">
+          <span class="opt-sym">$</span>
+          <input type="text" id="optDemenagement" class="opt-input" placeholder="—" inputmode="numeric" oninput="calc()">
+        </div>
+      </div>
+
+      <!-- Ameublement / peinture — input -->
+      <div class="line-item">
+        <div>
+          <div class="line-name">Ameublement / peinture</div>
+          <div class="line-sub">Votre estimation — ajouté au total si renseigné</div>
+        </div>
+        <div class="opt-input-wrap">
+          <span class="opt-sym">$</span>
+          <input type="text" id="optAmeublement" class="opt-input" placeholder="—" inputmode="numeric" oninput="calc()">
+        </div>
+      </div>
+
+      <div class="line-item">
+        <div>
+          <div class="line-name">Assurance titre</div>
+          <div class="line-sub">Protection contre les vices de titre — souvent exigée par le prêteur</div>
+        </div>
+        <div class="line-amount range">~300 $</div>
+      </div>
+      <div class="line-item">
+        <div>
+          <div class="line-name">Testament &amp; mandat d'inaptitude</div>
+          <div class="line-sub">Fortement recommandés lors d'un premier achat</div>
+        </div>
+        <div class="line-amount range">500 $ – 1 500 $</div>
+      </div>
+      <div class="line-item" style="border-bottom:none;">
+        <div>
+          <div class="line-name">Assurance vie / invalidité hypothécaire</div>
+          <div class="line-sub">Protection de votre capacité de remboursement</div>
+        </div>
+        <div class="line-amount optional">
+          <a href="/?src=frais#intake" style="color:var(--gold);text-decoration:none;font-style:normal;">Consultation gratuite →</a>
+        </div>
+      </div>
+    </div>
+  <div style="text-align:right;padding-top:8px;">
+    <button class="btn-pdf" onclick="exportPDF()">🖨&nbsp;Imprimer en PDF</button>
+  </div>
+  </div>
+
+  <!-- REFI RESULTS -->
+  <div id="resultsRefi" hidden class="card">
+    <div class="card-title">Frais estimés — Refinancement</div>
+    <div class="line-item">
+      <div><div class="line-name">Honoraires notariaux</div><div class="line-sub">Quittance + nouvel acte d'hypothèque</div></div>
+      <div class="line-amount range">1 800 $ – 2 500 $</div>
+    </div>
+    <div class="line-item">
+      <div><div class="line-name">Évaluation (si exigée par le prêteur)</div><div class="line-sub">Pas toujours requise — certains prêteurs acceptent une évaluation en ligne</div></div>
+      <div class="line-amount range">0 $ – 500 $</div>
+    </div>
+    <div class="line-item" style="border-bottom:none;">
+      <div><div class="line-name">Frais de quittance (pénalité de remboursement)</div><div class="line-sub">Variable selon votre contrat de prêt actuel</div></div>
+      <div class="line-amount optional">À vérifier</div>
+    </div>
+    <div class="note" style="margin-top:4px;">Aucune taxe de bienvenue ni prime SCHL pour un refinancement.</div>
+  </div>
+
+  <!-- RENOUV RESULTS -->
+  <div id="resultsRenouv" hidden class="card">
+    <div class="card-title">Frais estimés — Renouvellement</div>
+    <div id="renouvContent"></div>
+  </div>
+
+  </div><!-- /main-col -->
+
+  <div class="cta-col cta-sticky">
+  <!-- CTA -->
+  <div class="cta-card">
+    <h3>Des questions sur vos frais?</h3>
+    <p>Simon Labrecque, courtier hypothécaire chez Planiprêt, vous accompagne à chaque étape — sans surprise.</p>
+    <a href="/?src=frais#intake" class="btn">Valider mes frais avec Simon (gratuit)</a>
+  </div>
+
+  </div><!-- /cta-col -->
+  </div><!-- /layout-grid -->
+
+  <footer>
+    Calculateur à titre indicatif — les montants réels peuvent varier.<br>
+    <a href="/">hypolite.ca</a> · Simon Labrecque, courtier hypothécaire, Planiprêt #234768
+  </footer>
+</div>
+</main>
+
+<div class="hy-modal" id="hyPdfModal" hidden role="dialog" aria-modal="true" aria-labelledby="hyPdfTitle">
+  <div class="hy-modal-box">
+    <button class="hy-modal-x" type="button" aria-label="Fermer" onclick="closePdfModal()">×</button>
+    <h2 id="hyPdfTitle">Avant d'imprimer votre résumé</h2>
+    <p>Ces chiffres sont des estimations. Simon les valide avec vous et compare plus de 20 prêteurs pour trouver le meilleur taux — c'est gratuit.</p>
+    <div class="hy-modal-actions">
+      <a class="btn" id="hyPdfCta" href="/?src=frais-pdf#intake" target="_blank" rel="noopener">Consultation gratuite</a>
+      <a class="hy-modal-tel" href="tel:+15149001720">Appeler le (514) 900-1720</a>
+      <button type="button" class="hy-modal-skip" onclick="confirmPdf()">Télécharger mon PDF</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── DATA ────────────────────────────────────────────────────────────────────
+const BAREMES = {
+  std:[
+    {label:'0 $ – 62 900 $',       max:62900,    taux:.005},
+    {label:'62 901 $ – 315 000 $', max:315000,   taux:.010},
+    {label:'315 001 $ et plus',    max:Infinity, taux:.015}
+  ],
+  mtl:[
+    {label:'0 $ – 62 900 $',          max:62900,    taux:.005},
+    {label:'62 901 $ – 315 000 $',    max:315000,   taux:.010},
+    {label:'315 001 $ – 552 300 $',   max:552300,   taux:.015},
+    {label:'552 301 $ – 1 104 700 $', max:1104700,  taux:.020},
+    {label:'1 104 701 $ – 2 136 500 $',max:2136500, taux:.025},
+    {label:'2 136 501 $ – 3 113 000 $',max:3113000, taux:.035},
+    {label:'3 113 001 $ et plus',      max:Infinity,taux:.040}
+  ],
+  laval:[
+    {label:'0 $ – 62 900 $',       max:62900,    taux:.005},
+    {label:'62 901 $ – 315 000 $', max:315000,   taux:.010},
+    {label:'315 001 $ – 500 000 $',max:500000,   taux:.015},
+    {label:'500 001 $ et plus',    max:Infinity, taux:.030}
+  ]
+};
+
+const SCHL_TIERS = [
+  {minPct:5,  maxPct:9.99,  rate:4.00},
+  {minPct:10, maxPct:14.99, rate:3.10},
+  {minPct:15, maxPct:19.99, rate:2.80}
+];
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+let txType='achat', miseUnit='$', amortAns=25;
+
+function show(id){const el=document.getElementById(id);el.removeAttribute('hidden');el.style.display='';}
+function hide(id){const el=document.getElementById(id);el.style.display='none';}
+
+function setType(t){
+  txType=t;
+  document.querySelectorAll('.type-tab').forEach(b=>b.classList.toggle('active',b.dataset.type===t));
+  // Forms
+  t==='achat'?show('formAchat'):hide('formAchat');
+  t==='refi'?show('formRefi'):hide('formRefi');
+  t==='renouv'?show('formRenouv'):hide('formRenouv');
+  // Results — hide non-active tabs; achat stays visible (skeleton state)
+  if(t!=='achat') hide('resultsAchat');
+  if(t!=='refi') hide('resultsRefi');
+  if(t!=='renouv') hide('resultsRenouv');
+  // Recalculate for current tab
+  if(t==='achat') calc();
+  if(t==='refi') calcRefi();
+  if(t==='renouv') calcRenouv();
+}
+
+function setUnit(u){
+  miseUnit=u;
+  document.getElementById('btnDollar').classList.toggle('active',u==='$');
+  document.getElementById('btnPct').classList.toggle('active',u==='%');
+  document.getElementById('misePrefixSym').textContent=u==='$'?'$':'';
+  document.getElementById('mise').placeholder=u==='$'?'22 500':'5';
+  calc();
+}
+
+// ─── UTILS ───────────────────────────────────────────────────────────────────
+function numFromStr(raw){
+  let v=String(raw==null?'':raw).replace(/[\s\u00a0\u202f]/g,'');
+  if(/^\d{1,3}(,\d{3})+(\.\d+)?$/.test(v)) v=v.replace(/,/g,'');   // 450,000 (EN)
+  else v=v.replace(',','.');                                          // 4,5 (FR)
+  return parseFloat(v)||0;
+}
+function parseNum(id){return numFromStr(document.getElementById(id).value);}
+function fmt(n,d=0){return n.toLocaleString('fr-CA',{minimumFractionDigits:d,maximumFractionDigits:d});}
+function fmtDol(n){return n===0?'0 $':fmt(Math.round(n))+' $';}
+function fmtRange(a,b){return fmt(Math.round(a))+' $'+' – '+fmt(Math.round(b))+' $';}
+
+function calcTaxe(prix,type){
+  const baremes=BAREMES[type]||BAREMES.std;
+  let total=0,prev=0,rows=[];
+  for(const b of baremes){
+    const slice=Math.min(Math.max(prix-prev,0),b.max===Infinity?prix:b.max-prev);
+    const amt=slice*b.taux;
+    total+=amt;
+    rows.push({label:b.label,taux:b.taux,amt,active:slice>0});
+    prev=b.max;
+    if(prix<=prev) break;
+  }
+  return{total,rows};
+}
+
+
+
+function calcCredit(total,prix){
+  const brut=Math.min(total,5000)+Math.max(0,Math.min(total-5000,3500)*.25);
+  const phaseout=Math.max(0,(prix-750000)*.0235);
+  const net=Math.max(0,brut-phaseout);
+  const c1=Math.min(total,5000);
+  const c2=Math.max(0,Math.min(total-5000,3500)*.25);
+  return{brut,phaseout,net,c1,c2};
+}
+
+function setAmort(a){
+  amortAns=a;
+  document.getElementById('btn25').classList.toggle('active',a===25);
+  document.getElementById('btn30').classList.toggle('active',a===30);
+  calc();
+}
+
+function updateAmortToggle(pa,mn,mdpPct){
+  const condPA=document.getElementById('condPA');
+  const condMN=document.getElementById('condMN');
+  const condConv=document.getElementById('condConv');
+  const btn30=document.getElementById('btn30');
+  const eligPA=pa, eligMN=mn, eligConv=mdpPct>=20;
+  const unlocked=eligPA||eligMN||eligConv;
+  condPA.className='amort-cond'+(eligPA?' met':'');
+  condPA.querySelector('.cond-icon').textContent=eligPA?'✓':'✗';
+  condMN.className='amort-cond'+(eligMN?' met':'');
+  condMN.querySelector('.cond-icon').textContent=eligMN?'✓':'✗';
+  condConv.className='amort-cond'+(eligConv?' met':'');
+  condConv.querySelector('.cond-icon').textContent=eligConv?'✓':'✗';
+  btn30.disabled=!unlocked;
+  if(!unlocked&&amortAns===30){
+    amortAns=25;
+    document.getElementById('btn25').classList.add('active');
+    document.getElementById('btn30').classList.remove('active');
+  }
+}
+
+function getSchLRate(mdpPct,is30){
+  for(const t of SCHL_TIERS){
+    if(mdpPct>=t.minPct&&mdpPct<=t.maxPct){
+      return (t.rate+(is30?.20:0))/100;
+    }
+  }
+  return null;
+}
+
+// ─── TAX ADJUSTMENT ──────────────────────────────────────────────────────────
+function getTaxAdj(evalMuni,taxRate,dateActe){
+  // taxRate as decimal e.g. 0.0070
+  const annualMunic=evalMuni*taxRate;
+  const annualScol=annualMunic*.10;
+  if(!dateActe){
+    // No date: return min(0)/max(full year) range — buyer pays rest of year
+    return{
+      municMin:0,municMax:annualMunic,
+      scolMin:0,scolMax:annualScol,
+      hasDate:false
+    };
+  }
+  const d=new Date(dateActe);
+  const yr=d.getFullYear();
+  const startOfYear=new Date(yr,0,1);
+  const endOfYear=new Date(yr,11,31);
+  const totalDays=(endOfYear-startOfYear)/86400000+1;
+  const daysRemaining=(endOfYear-d)/86400000;
+  const fraction=Math.max(0,Math.min(1,daysRemaining/totalDays));
+  return{
+    munic:annualMunic*fraction,
+    scol:annualScol*fraction,
+    fraction,
+    hasDate:true
+  };
+}
+
+// ─── MAIN CALC ───────────────────────────────────────────────────────────────
+function calc(){
+  const prix=parseNum('prix');
+  if(!prix){
+    document.getElementById('heroTotal').textContent='—';
+    document.getElementById('heroSub').textContent='';
+    document.getElementById('skeletonHint').style.display='block';
+    document.getElementById('txbAmount').textContent='—';
+    document.getElementById('txbSub').textContent='Droits de mutation 2026';
+    document.getElementById('schlAmount').textContent='—';
+    document.getElementById('schlSub').textContent='Assurance hypothécaire';
+    document.getElementById('totalCash').textContent='—';
+    document.getElementById('taxAdjAmount').textContent='—';
+    document.getElementById('scolAdjAmount').textContent='—';
+    document.getElementById('creditBlock').hidden=true;
+    document.getElementById('schlBlock').hidden=true;
+    document.getElementById('tvqLine').hidden=true;
+    hide('maisonneuveBlock'); hide('taxNote');
+    updateAmortToggle(false,false,0);
+    document.getElementById('schlSection').style.opacity='1';
+    document.getElementById('taxAdjLine').style.opacity='1';
+    document.getElementById('scolAdjLine').style.opacity='1';
+    document.getElementById('trancheTable').innerHTML='';
+    show('resultsAchat');
+    return;
+  }
+  document.getElementById('skeletonHint').style.display='none';
+
+  // Mise de fonds
+  let miseDol=parseNum('mise');
+  let mdpPct;
+  if(miseUnit==='$'){
+    mdpPct=prix>0?miseDol/prix*100:0;
+  } else {
+    mdpPct=miseDol;
+    miseDol=prix*mdpPct/100;
+  }
+
+  // Mise de fonds hint
+  const mdpHint=document.getElementById('miseHint');
+  if(mdpPct>0&&mdpPct<5){
+    mdpHint.textContent='⚠️ Mise de fonds minimale : 5 %';
+    mdpHint.style.color='var(--red)';
+  } else if(mdpPct>=5&&mdpPct<10){
+    mdpHint.textContent=`${fmt(mdpPct,1)} % — SCHL requis (min. 5 %)`;
+    mdpHint.style.color='var(--muted)';
+  } else if(mdpPct>=10&&mdpPct<20){
+    mdpHint.textContent=`${fmt(mdpPct,1)} % — SCHL requis`;
+    mdpHint.style.color='var(--muted)';
+  } else if(mdpPct>=20){
+    mdpHint.textContent=`${fmt(mdpPct,1)} % — Pas de SCHL`;
+    mdpHint.style.color='var(--green)';
+  } else {
+    mdpHint.textContent='≥ 5 % du prix d\'achat';
+    mdpHint.style.color='var(--muted)';
+  }
+
+  // Ville / bareme
+  const villeVal=document.getElementById('ville').value||'std|0.70';
+  const[baremeType,taxRateStr]=villeVal.split('|');
+  const taxRate=parseFloat(taxRateStr)/100;
+
+  // Taxe bienvenue
+  const baseCalc=Math.max(prix,parseNum('eval')||prix);
+  const{total:txbTotal,rows:txbRows}=calcTaxe(baseCalc,baremeType);
+
+  document.getElementById('txbAmount').textContent=fmtDol(txbTotal);
+  document.getElementById('txbSub').textContent=
+    baremeType==='mtl'?'Montréal — 7 tranches 2026':
+    baremeType==='laval'?'Laval — 4 tranches 2026':
+    'Droits de mutation 2026';
+
+  // Tranche table
+  const tt=document.getElementById('trancheTable');
+  tt.innerHTML=txbRows.map(r=>`
+    <div class="tr-row ${r.active?'':'inactive'}">
+      <span>${r.label}</span>
+      <span class="tr-taux">${(r.taux*100).toFixed(1)} %</span>
+      <span class="tr-amt ${r.active?'active':''}">${fmtDol(r.amt)}</span>
+    </div>`).join('');
+
+  // Premier acheteur credit
+  const pa=document.getElementById('premierAcheteur').checked;
+  document.getElementById('creditBlock').hidden=!pa;
+  if(pa){
+    const{c1,c2,phaseout,net}=calcCredit(txbTotal,prix);
+    document.getElementById('cred1').textContent=fmtDol(c1);
+    document.getElementById('cred2').textContent=fmtDol(c2);
+    const pr=document.getElementById('phaseoutRow');
+    pr.hidden=phaseout<=0;
+    document.getElementById('credPhaseout').textContent='– '+fmtDol(phaseout);
+    document.getElementById('credNet').textContent=fmtDol(net);
+  }
+
+  // SCHL
+  const mn=document.getElementById('maisonNeuve').checked;
+  updateAmortToggle(pa,mn,mdpPct);
+  const is30=amortAns===30&&(pa||mn||mdpPct>=20)&&prix<=1500000;
+  const needsSchl=mdpPct>0&&mdpPct<20;
+  const schlRate=needsSchl?getSchLRate(mdpPct,is30):null;
+  const pret=prix-miseDol;
+  const schlPrime=schlRate?pret*schlRate:0;
+  const tvq=schlPrime*0.09975;
+
+  document.getElementById('schlSection').style.opacity=needsSchl?'1':'0.5';
+  if(needsSchl&&schlRate){
+    document.getElementById('schlAmount').textContent=fmtDol(schlPrime);
+    document.getElementById('schlSub').textContent=`Assurance hypothécaire — ajoutée au prêt`;
+    document.getElementById('schlBlock').hidden=false;
+    document.getElementById('sb1').textContent=fmtDol(pret);
+    document.getElementById('sb2').textContent=fmt(mdpPct,1)+' %';
+    document.getElementById('sb3').textContent=fmt(schlRate*100,2)+' %';
+    document.getElementById('sb30Row').hidden=!is30;
+    document.getElementById('sb4').textContent=fmtDol(schlPrime);
+    document.getElementById('tvqLine').hidden=false;
+    document.getElementById('tvqAmount').textContent=fmtDol(tvq);
+  } else if(prix>1500000){
+    document.getElementById('schlAmount').textContent='N/A';
+    document.getElementById('schlSub').textContent='Prix > 1 500 000 $ — assurance non disponible';
+    document.getElementById('schlBlock').hidden=true;
+    document.getElementById('tvqLine').hidden=true;
+  } else {
+    document.getElementById('schlAmount').textContent=mdpPct>=20?'Aucune':'Entrez la mise de fonds';
+    document.getElementById('schlSub').textContent=mdpPct>=20?'Mise de fonds ≥ 20 % — pas d\'assurance requise':'Assurance hypothécaire';
+    document.getElementById('schlBlock').hidden=true;
+    document.getElementById('tvqLine').hidden=true;
+  }
+
+  // Tax adjustment
+  const evalMuni=parseNum('eval');
+  const dateActe=document.getElementById('dateActe').value;
+  const taxAdj=evalMuni>0?getTaxAdj(evalMuni,taxRate,dateActe):null;
+  const taxLine=document.getElementById('taxAdjLine');
+  const scolLine=document.getElementById('scolAdjLine');
+  const taxNote=document.getElementById('taxNote');
+
+  if(taxAdj){
+    taxNote.style.display='block';
+    if(taxAdj.hasDate){
+      const pct=Math.round(taxAdj.fraction*100);
+      document.getElementById('taxAdjAmount').textContent=fmtDol(taxAdj.munic);
+      document.getElementById('taxAdjSub').textContent=`${pct} % de l'année restante — taux ~${(taxRate*100).toFixed(2)} % (estimé)`;
+      document.getElementById('scolAdjAmount').textContent=fmtDol(taxAdj.scol);
+      document.getElementById('scolAdjSub').textContent=`~10 % des taxes munic. (estimé)`;
+    } else {
+      document.getElementById('taxAdjAmount').textContent=fmtRange(taxAdj.municMin,taxAdj.municMax);
+      document.getElementById('taxAdjSub').textContent=`Selon la date — taux ~${(taxRate*100).toFixed(2)} % (estimé)`;
+      document.getElementById('scolAdjAmount').textContent=fmtRange(taxAdj.scolMin,taxAdj.scolMax);
+      document.getElementById('scolAdjSub').textContent='~10 % des taxes munic. (estimé)';
+    }
+    taxLine.style.opacity='1';
+    scolLine.style.opacity='1';
+  } else {
+    taxNote.style.display='none';
+    document.getElementById('taxAdjAmount').textContent='Entrez l\'évaluation';
+    document.getElementById('taxAdjSub').textContent='Facultatif — pour l\'ajustement de taxes';
+    document.getElementById('scolAdjAmount').textContent='—';
+    taxLine.style.opacity='0.5';
+    scolLine.style.opacity='0.5';
+  }
+
+  // Maison neuve rebates
+  if(mn){
+    // Federal TPS rebate (new housing rebate)
+    let tpsRebate=0;
+    if(prix<=350000) tpsRebate=Math.min(prix*0.05*0.36,6300);
+    else if(prix<450000) tpsRebate=6300*(450000-prix)/100000;
+    // QC TVQ rebate
+    const maxTvqRebate=300000*0.09975*0.36; // ~$10,773
+    let tvqRebate=0;
+    if(prix<=200000) tvqRebate=prix*0.09975*0.36;
+    else if(prix<300000) tvqRebate=maxTvqRebate*(300000-prix)/100000;
+    document.getElementById('tpsRebateAmount').textContent=tpsRebate>0?fmtDol(tpsRebate):'N/A';
+    document.getElementById('tvqRebateAmount').textContent=tvqRebate>0?fmtDol(tvqRebate):'N/A';
+    if(prix>450000) document.getElementById('tpsRebateSub').textContent='Prix > 450 000 $ — aucun remboursement TPS';
+    else if(prix>350000) document.getElementById('tpsRebateSub').textContent=`Réduction progressive (350k–450k) — max 6 300 $`;
+    else document.getElementById('tpsRebateSub').textContent=`36 % × ${fmtDol(Math.round(prix*0.05))} (TPS 5 %)`;
+    if(prix>300000) document.getElementById('tvqRebateSub').textContent='Prix > 300 000 $ — aucun remboursement TVQ';
+    else if(prix>200000) document.getElementById('tvqRebateSub').textContent=`Réduction progressive (200k–300k) — max ${fmtDol(Math.round(maxTvqRebate))}`;
+    else document.getElementById('tvqRebateSub').textContent=`36 % × ${fmtDol(Math.round(prix*0.09975))} (TVQ 9,975 %)`;
+    show('maisonneuveBlock');
+  } else {
+    hide('maisonneuveBlock');
+  }
+
+  // Total hero + cash total
+  const credNet=pa?calcCredit(txbTotal,prix).net:0;
+  const taxAdjMunic=taxAdj?(taxAdj.hasDate?taxAdj.munic:taxAdj.municMax):0;
+  const taxAdjScol=taxAdj?(taxAdj.hasDate?taxAdj.scol:taxAdj.scolMax):0;
+  // Optional user estimates
+  const optDemen = parseFloat((document.getElementById('optDemenagement').value||'').replace(/[\s,]/g,'').replace(/ /g,''))||0;
+  const optAmeub = parseFloat((document.getElementById('optAmeublement').value||'').replace(/[\s,]/g,'').replace(/ /g,''))||0;
+  const optExtra = optDemen + optAmeub;
+
+  // Cash total = txb (net of credit) + TVQ + munic adj + scol adj + optional extras
+  const cashMin=txbTotal-credNet+tvq+(taxAdj&&!taxAdj.hasDate?taxAdj.municMin+taxAdj.scolMin:0)+optExtra;
+  const cashMax=txbTotal-credNet+tvq+taxAdjMunic+taxAdjScol+optExtra;
+
+  // Show optional line items in breakdown when filled
+  const optDemenLine = document.getElementById('optDemenLine');
+  const optAmeubLine = document.getElementById('optAmeubLine');
+  optDemenLine.hidden = optDemen <= 0;
+  if (optDemen > 0) document.getElementById('optDemenAmt').textContent = fmtDol(optDemen);
+  optAmeubLine.hidden = optAmeub <= 0;
+  if (optAmeub > 0) document.getElementById('optAmeubAmt').textContent = fmtDol(optAmeub);
+
+  // Hero: total includes fixed range items (notaire 1800-3000, insp ~1000, eval ~500)
+  const heroMin=cashMin+1800+1000+500;
+  const heroMax=cashMax+3000+1000+500;
+  document.getElementById('heroTotal').textContent=fmtRange(heroMin,heroMax);
+  document.getElementById('heroSub').textContent='Excluant la prime SCHL (ajoutée au prêt)';
+
+  // Cash line total (variable items only: txb-credit, tvq, tax adj)
+  document.getElementById('totalCash').textContent=
+    taxAdj&&!taxAdj.hasDate?fmtRange(cashMin,cashMax):fmtDol(Math.round(cashMax));
+
+  show('resultsAchat');
+}
+
+function calcRefi(){
+  show('resultsRefi');
+}
+
+function calcRenouv(){
+  const cp=document.getElementById('changePreteur').checked;
+  const el=document.getElementById('renouvContent');
+  if(cp){
+    el.innerHTML=`
+      <div class="line-item"><div><div class="line-name">Honoraires notariaux</div><div class="line-sub">Changement de prêteur — nouvel acte</div></div><div class="line-amount range">1 800 $ – 2 500 $</div></div>
+      <div class="line-item" style="border-bottom:none;"><div><div class="line-name">Évaluation (selon le prêteur)</div><div class="line-sub">Pas toujours requise</div></div><div class="line-amount range">0 $ – 500 $</div></div>
+      <div class="note" style="margin-top:4px;">Certains prêteurs remboursent les frais de transfert pour attirer votre dossier.</div>`;
+  } else {
+    el.innerHTML=`<div class="note">✅ Renouvellement avec le même prêteur — généralement sans frais.</div>`;
+  }
+  show('resultsRenouv');
+}
+
+function toggleTranches(){
+  const t=document.getElementById('trancheTable');
+  t.classList.toggle('open');
+  document.querySelector('.tranche-toggle').textContent=
+    t.classList.contains('open')?'Masquer les tranches ▴':'Voir le détail des tranches ▾';
+}
+
+// Init — setType handles showing/hiding all sections correctly
+setType('achat');
+
+// ─── I18N (FR ⇄ EN) ──────────────────────────────────────────────────────────
+// French is the source language in the markup. English is applied by walking the
+// DOM and translating text nodes / attributes (originals are remembered so the
+// toggle is lossless). A MutationObserver keeps dynamically-rendered text in sync.
+const I18N = (function(){
+  const EXACT = {
+    
+    
+    
+    
+    
+    
+    
+    /*HY-PRINT-STRINGS*/ "Courtier hypothécaire — Planiprêt":"Mortgage broker — Planiprêt", "Total estimé":"Estimated total", "Estimation à titre indicatif. Les taux, les conditions et les critères d'approbation varient selon le prêteur. Les taux sont capitalisés semi-annuellement (norme canadienne).":"Estimate only. Rates, conditions and approval criteria vary by lender. Rates are compounded semi-annually (Canadian standard).", "Estimation à titre indicatif. Les honoraires notariaux, l'inspection et l'évaluation sont des estimés. Les taxes (droits de mutation, TVQ, ajustements) varient selon la municipalité et la date de l'acte.":"Estimate only. Notary fees, inspection and appraisal are estimates. Taxes (transfer duties, QST, adjustments) vary by municipality and closing date.", "Calculateur à titre indicatif — les montants réels peuvent varier.":"Indicative calculator — actual amounts may vary.", "Simon Labrecque, courtier hypothécaire, Planiprêt #234768":"Simon Labrecque, mortgage broker, Planiprêt #234768", /*/HY-PRINT-STRINGS*/
+    /*HY-NAV-STRINGS*/
+    'Pour qui':'Who it\'s for','Comment ça marche':'How it works','À propos':'About',
+    'Calculatrice hypothécaire':'Mortgage calculator','Calculateur d\'équité':'Equity calculator',
+    'Commencer mon dossier':'Start my file','tout à la même place':'everything in one place',
+    'Outil gratuit':'Free tool','← Accueil':'← Home','Calculateur d\'équité ↗':'Equity calculator ↗',
+    'Outils':'Tools','Navigation principale':'Main navigation',
+    /*/HY-NAV-STRINGS*/
+    /*HY-BOOK-STRINGS*/
+    "Réserver un appel":"Book a call",
+    "Cabinet en courtage hypothécaire":"Mortgage brokerage firm",
+    "Parlons de votre projet":"Let's talk about your project",
+    "Un premier appel, sans engagement. Choisissez comment on commence.":"A first call, no commitment. Choose how we get started.",
+    "Choisir mon heure":"Pick my time",
+    "Réservez directement dans mon agenda.":"Book directly in my calendar.",
+    "Voir mes disponibilités →":"See my availability →",
+    "Voir mes disponibilités (nouvel onglet) →":"See my availability (new tab) →",
+    "Consultation gratuite":"Free consultation",
+    "Capacité d'emprunt":"Borrowing capacity",
+    "Calculer ma capacité d'emprunt":"Calculate my borrowing capacity",
+    "Calculer mon paiement":"Calculate my payment",
+    "Calculer mon équité":"Calculate my equity",
+    "Calculer mes frais de transaction":"Calculate my closing costs",
+    "Consultation gratuite →":"Free consultation →",
+    "Consultation gratuite <span>→</span>":"Free consultation <span>→</span>",
+    "Demander ma consultation gratuite":"Request my free consultation",
+    "Valider ce scénario avec Simon (gratuit)":"Check this scenario with Simon (free)",
+    "Valider mes frais avec Simon (gratuit)":"Check my costs with Simon (free)",
+    "Me faire rappeler":"Have me call you back",
+    "Laissez vos coordonnées, je vous appelle ensuite.":"Leave your details, I'll call you afterwards.",
+    "Un appel exploratoire":"An exploratory call",
+    "Un appel d'environ 30 minutes pour comprendre votre besoin, vos objectifs et vos chiffres. Zéro engagement, zéro jargon inutile.":"A call of about 30 minutes to understand your need, your goals and your numbers. No commitment, no needless jargon.",
+    "Simon Labrecque, courtier hypothécaire chez Planiprêt. Un vrai appel, du magasinage auprès de plus de 20 prêteurs. On explique tout — pas de jargon, pas de surprise.":"Simon Labrecque, mortgage broker at Planiprêt. A real call, shopping across 20+ lenders. We explain everything — no jargon, no surprises.",
+    "Un appel exploratoire d'environ 30 minutes pour comprendre votre besoin. Sans engagement.":"An exploratory call of about 30 minutes to understand your need. No commitment.",
+    "ou appelez-moi : (514) 900-1720":"or call me: (514) 900-1720",
+    "Commencer mon dossier →":"Start my file →",
+    "Ou appelez-moi directement :":"Or call me directly:",
+    "Simon Labrecque, courtier hypothécaire · Permis AMF #234768":"Simon Labrecque, mortgage broker · AMF Licence #234768",
+    "Commencer mon dossier":"Start my file",
+    "Sans engagement. Je vous rappelle personnellement.":"No commitment. I'll call you back personally.",
+    "Type de projet":"Project type",
+    "Achat":"Purchase",
+    "Renouvellement":"Renewal",
+    "Refinancement":"Refinancing",
+    "Consolidation de dettes":"Debt consolidation",
+    "Autre":"Other",
+    "J'accepte d'être contacté par Simon Labrecque au sujet de ma demande et qu'il reçoive les chiffres saisis dans le calculateur.":"I agree to be contacted by Simon Labrecque about my request and that he receives the figures I entered in the calculator.",
+    "Politique de confidentialité":"Privacy policy",
+    "Envoyer ma demande":"Send my request",
+    "← Retour":"← Back",
+    "Merci de remplir votre nom, un courriel valide et un téléphone, et d'accepter d'être contacté.":"Please enter your name, a valid email and a phone number, and agree to be contacted.",
+    "Merci! C'est reçu.":"Thank you! It's received.",
+    "Je vous appelle personnellement. Si vous préférez, choisissez directement une heure.":"I'll call you personally. If you prefer, pick a time directly.",
+    "Fermer":"Close",
+    "Votre nom complet":"Your full name",
+    "Votre courriel":"Your email",
+    "(514) 555-1234":"(514) 555-1234",
+    "Parlez-moi de votre projet (optionnel)":"Tell me about your project (optional)",
+    /*/HY-BOOK-STRINGS*/
+    /*HY-PDF-STRINGS*/
+    '🖨 Imprimer en PDF':'🖨 Print to PDF','Fermer':'Close',
+    'Avant d\'imprimer votre résumé':'Before you print your summary',
+    'Ces chiffres sont des estimations. Simon les valide avec vous et compare plus de 20 prêteurs pour trouver le meilleur taux — c\'est gratuit.':'These figures are estimates. Simon validates them with you and compares 20+ lenders to find the best rate — it\'s free.',
+    'Appeler le (514) 900-1720':'Call (514) 900-1720','Télécharger mon PDF':'Download my PDF',
+    'Validons ces chiffres ensemble — gratuit':'Let\'s validate these numbers together — free',
+    /*/HY-PDF-STRINGS*/
+    // chrome
+    'Basculer thème clair/sombre':'Toggle light/dark theme',
+    'Passer en anglais':'Switch to English',
+    // header / tabs
+    'Frais de transaction':'Closing Costs',
+    'Estimez tous vos frais à l\'achat, au refinancement ou au renouvellement':'Estimate every cost of buying, refinancing or renewing',
+    'Type de transaction':'Transaction type',
+    'Achat':'Purchase','Refinancement':'Refinance','Renouvellement':'Renewal',
+    // purchase form
+    'Détails de l\'achat':'Purchase details',
+    'Prix d\'achat':'Purchase price','Mise de fonds':'Down payment',
+    'Évaluation municipale':'Municipal assessment',
+    'Facultatif — pour l\'ajustement de taxes':'Optional — for the property-tax adjustment',
+    'Date de l\'acte notarié':'Deed signing date','Municipalité':'Municipality',
+    'Montréal':'Montreal','Québec':'Quebec City','Autre municipalité du Québec':'Other Quebec municipality',
+    'Rive-Nord':'North Shore','West Island / Rive-Ouest':'West Island / West Shore','Rive-Sud':'South Shore',
+    'Estrie / Cantons-de-l\'Est':'Eastern Townships','Québec (ville)':'Quebec City area',
+    'Mauricie / Centre-du-Québec':'Mauricie / Centre-du-Québec','Saguenay–Lac-Saint-Jean':'Saguenay–Lac-Saint-Jean',
+    'Autre':'Other',
+    'Premier acheteur':'First-time buyer','NOUVEAU 2026':'NEW 2026',
+    'Crédit d\'accès à la propriété — débloque 30 ans':'Home-access credit — unlocks 30-year amortization',
+    'Maison neuve':'New build','Débloque 30 ans (construction neuve)':'Unlocks 30 years (new construction)',
+    'Amortissement':'Amortization','25 ans':'25 yrs','30 ans':'30 yrs','20 ans':'20 yrs',
+    'Premier acheteur coché':'First-time buyer checked','Maison neuve cochée':'New build checked',
+    'Mise de fonds ≥ 20 % (conventionnel)':'Down payment ≥ 20% (conventional)',
+    // refi / renewal forms
+    'Détails du refinancement':'Refinance details',
+    'Valeur approximative de la propriété':'Approximate property value',
+    'ℹ️ Le refinancement n\'implique pas de taxe de bienvenue ni de prime SCHL. Les principaux frais sont les honoraires notariaux et les frais d\'évaluation si exigés par le prêteur.':'ℹ️ A refinance involves no welcome tax and no CMHC premium. The main costs are notary fees and the appraisal fee if the lender requires one.',
+    'Détails du renouvellement':'Renewal details',
+    'ℹ️ Le renouvellement avec le même prêteur est généralement sans frais. Un changement de prêteur peut entraîner des frais notariaux (~500 $) et parfois une évaluation.':'ℹ️ Renewing with the same lender is usually free. Switching lenders can bring notary fees (~$500) and sometimes an appraisal.',
+    'Changement de prêteur':'Lender switch','Entraîne des frais notariaux supplémentaires':'Triggers extra notary fees',
+    // results
+    '👆 Entrez un prix d\'achat ci-dessus pour estimer vos frais':'👆 Enter a purchase price above to estimate your costs',
+    'Total estimé des frais de fermeture':'Estimated total closing costs',
+    'Détail des frais':'Cost breakdown',
+    '🏛️ Taxe de bienvenue (droits de mutation)':'🏛️ Welcome tax (land transfer duties)',
+    'Montant brut':'Gross amount','Droits de mutation 2026':'2026 transfer duties',
+    'Voir le détail des tranches ▾':'View bracket breakdown ▾','Masquer le détail des tranches ▴':'Hide bracket breakdown ▴',
+    '💰 Crédit premier acheteur 2026':'💰 2026 first-time buyer credit',
+    '100 % des premiers 5 000 $':'100% of the first $5,000','25 % du prochain 3 500 $':'25% of the next $3,500',
+    'Réduction progressive (> 750 000 $)':'Phase-out (> $750,000)','Remboursement net':'Net refund',
+    'Remboursement sur votre prochain rapport d\'impôt provincial':'Refunded on your next provincial tax return',
+    '🔎 Conditions d\'admissibilité':'🔎 Eligibility conditions',
+    'Prix d\'achat ≤ 1 000 000 $ (crédit = 0 $ au-dessus)':'Purchase price ≤ $1,000,000 (credit = $0 above that)',
+    'Prime SCHL':'CMHC premium','Assurance hypothécaire':'Mortgage insurance',
+    'Assurance hypothécaire — ajoutée au prêt':'Mortgage insurance — added to the loan',
+    'Prêt assuré':'Insured loan','MDP (%)':'Down payment (%)','Taux de prime':'Premium rate',
+    'Option 30 ans (+0,20 %)':'30-year option (+0.20%)','Inclus':'Included','Prime totale':'Total premium',
+    'Ajoutée au solde du prêt':'Added to the loan balance',
+    'TVQ sur prime SCHL':'QST on CMHC premium','9,975 % — payable comptant à la clôture':'9.975% — payable in cash at closing',
+    '🏗️ Remboursements — habitation neuve':'🏗️ Rebates — new home',
+    'Remboursement TPS fédéral':'Federal GST rebate','Remboursement TVQ provincial (QC)':'Provincial QST rebate (QC)',
+    '36 % de la TPS (5 %) — max 6 300 $':'36% of GST (5%) — max $6,300',
+    '36 % de la TVQ (9,975 %) — max ~10 773 $':'36% of QST (9.975%) — max ~$10,773',
+    'Honoraires notariaux':'Notary fees','Achat résidentiel — varie selon la complexité':'Residential purchase — varies with complexity',
+    'Inspection préachat':'Pre-purchase inspection','Fortement recommandée':'Strongly recommended',
+    'Évaluation (commandée par le prêteur)':'Appraisal (ordered by the lender)','Peut être à la charge de l\'acheteur':'May be paid by the buyer',
+    'Ajustement taxes municipales':'Municipal tax adjustment','Remboursement au vendeur — estimé':'Reimbursement to the seller — estimate',
+    'Ajustement taxes scolaires':'School tax adjustment','~10 % des taxes munic. — estimé':'~10% of municipal taxes — estimate',
+    '~10 % des taxes munic. (estimé)':'~10% of municipal taxes (estimate)',
+    'Déménagement':'Moving','Votre estimation':'Your estimate','Ameublement / peinture':'Furniture / painting',
+    'Votre estimation — ajouté au total si renseigné':'Your estimate — added to the total when filled in',
+    'Total estimé (frais comptant)':'Estimated total (cash costs)',
+    'La prime SCHL est ajoutée à votre prêt et n\'est pas incluse dans le total comptant ci-dessus. Le total comptant exclut aussi les frais à fourchette (notaire, inspection, évaluation) — prévoir une marge.':'The CMHC premium is added to your loan and is not included in the cash total above. The cash total also leaves out the ranged fees (notary, inspection, appraisal) — leave yourself a buffer.',
+    'Frais optionnels à considérer':'Optional costs to consider',
+    'Assurance titre':'Title insurance','Protection contre les vices de titre — souvent exigée par le prêteur':'Protection against title defects — often required by the lender',
+    'Testament & mandat d\'inaptitude':'Will & protection mandate','Fortement recommandés lors d\'un premier achat':'Strongly recommended for a first purchase',
+    'Assurance vie / invalidité hypothécaire':'Mortgage life / disability insurance','Protection de votre capacité de remboursement':'Protects your ability to repay',
+    'Consultation →':'Consultation →',
+    'Frais estimés — Refinancement':'Estimated costs — Refinance','Quittance + nouvel acte d\'hypothèque':'Discharge + new mortgage deed',
+    'Évaluation (si exigée par le prêteur)':'Appraisal (if required by the lender)',
+    'Pas toujours requise — certains prêteurs acceptent une évaluation en ligne':'Not always required — some lenders accept an online valuation',
+    'Frais de quittance (pénalité de remboursement)':'Discharge fees (prepayment penalty)','Variable selon votre contrat de prêt actuel':'Depends on your current loan contract',
+    'À vérifier':'To be confirmed','Aucune taxe de bienvenue ni prime SCHL pour un refinancement.':'No welcome tax or CMHC premium on a refinance.',
+    'Frais estimés — Renouvellement':'Estimated costs — Renewal',
+    '✅ Renouvellement avec le même prêteur — généralement sans frais.':'✅ Renewal with the same lender — usually free of charge.',
+    'Changement de prêteur — nouvel acte':'Lender switch — new deed','Évaluation (selon le prêteur)':'Appraisal (depends on the lender)',
+    'Pas toujours requise':'Not always required',
+    'Certains prêteurs remboursent les frais de transfert pour attirer votre dossier.':'Some lenders cover the transfer fees to win your file.',
+    // CTA / footer
+    'Des questions sur vos frais?':'Questions about your costs?',
+    'Simon Labrecque, courtier hypothécaire chez Planiprêt, vous accompagne à chaque étape — sans surprise.':'Simon Labrecque, mortgage broker at Planiprêt, guides you through every step — no surprises.',
+    'Prendre rendez-vous':'Book a meeting',
+    'Prêt à faire le grand saut?':'Ready to take the leap?',
+    'Simon Labrecque analyse votre dossier gratuitement et vous trouve le meilleur taux disponible.':'Simon Labrecque reviews your file for free and finds you the best rate available.',
+    'Obtenir mon taux':'Get my rate',
+    // dynamic hints (frais)
+    '⚠️ Mise de fonds minimale : 5 %':'⚠️ Minimum down payment: 5%',
+    '≥ 5 % du prix d\'achat':'≥ 5% of the purchase price',
+    'Excluant la prime SCHL (ajoutée au prêt)':'Excluding the CMHC premium (added to the loan)',
+    'Montréal — 7 tranches 2026':'Montreal — 7 brackets, 2026','Laval — 4 tranches 2026':'Laval — 4 brackets, 2026',
+    'Entrez la mise de fonds':'Enter the down payment','Aucune':'None',
+    'Mise de fonds ≥ 20 % — pas d\'assurance requise':'Down payment ≥ 20% — no insurance required',
+    'Prix > 1 500 000 $ — assurance non disponible':'Price > $1,500,000 — insurance not available',
+    'Entrez l\'évaluation':'Enter the assessment',
+    'Prix > 450 000 $ — aucun remboursement TPS':'Price > $450,000 — no GST rebate',
+    'Prix > 300 000 $ — aucun remboursement TVQ':'Price > $300,000 — no QST rebate',
+    '⚠️ Les taux de taxation utilisés sont des <strong>estimés régionaux</strong> — l\'ajustement réel sera calculé par le notaire selon les comptes de taxes officiels.':'⚠️ The tax rates used are <strong>regional estimates</strong> — the notary will calculate the actual adjustment from the official tax bills.',
+    // list items with markup
+    'Ne pas avoir été propriétaire d\'une résidence principale au cours des <strong>5 dernières années</strong>':'Not have owned a principal residence in the last <strong>5 years</strong>',
+    'Habiter la propriété comme résidence principale dans les <strong>12 mois</strong> suivant l\'achat':'Live in the property as your principal residence within <strong>12 months</strong> of the purchase',
+    'S\'applique sur la portion <em>remboursable</em> de votre déclaration de revenus QC':'Applies to the <em>refundable</em> portion of your QC income tax return',
+    'Ces remboursements s\'appliquent si vous occupez la propriété comme <strong>résidence principale</strong>. La TPS/TVQ est généralement incluse dans le prix de vente du constructeur — les rebates réduisent votre coût net.':'These rebates apply if you occupy the property as your <strong>principal residence</strong>. GST/QST is usually included in the builder\'s sale price — the rebates reduce your net cost.',
+    'Calculateur à titre indicatif — les montants réels peuvent varier.<br> <a href="/">hypolite.ca</a> · Simon Labrecque, courtier hypothécaire, Planiprêt #234768':'For illustration only — actual amounts may vary.<br> <a href="/">hypolite.ca</a> · Simon Labrecque, mortgage broker, Planiprêt #234768',
+    'Calculateur à titre indicatif — taux capitalisés semi-annuellement (norme canadienne).<br> <a href="/">hypolite.ca</a> · Simon Labrecque, courtier hypothécaire, Planiprêt #234768':'For illustration only — rates compounded semi-annually (Canadian standard).<br> <a href="/">hypolite.ca</a> · Simon Labrecque, mortgage broker, Planiprêt #234768',
+    // ── calculateur ──
+    'Calculateur hypothécaire':'Mortgage Calculator','Estimez votre paiement et le coût total de votre prêt':'Estimate your payment and the total cost of your loan',
+    'Votre prêt':'Your loan','🏠 Achat':'🏠 Purchase','🔁 Refinancement':'🔁 Refinance',
+    'Premier acheteur ou maison neuve':'First-time buyer or new build',
+    'Admissible à l\'amortissement sur 30 ans avec SCHL (depuis août 2024)':'Eligible for 30-year amortization with CMHC (since August 2024)',
+    'Valeur de la propriété':'Property value','Montant refinancé':'Refinanced amount','Max 80 % de la valeur':'Max 80% of value',
+    'Consolidation de dettes':'Debt consolidation','Inclure des dettes dans le refinancement':'Roll debts into the refinance',
+    'Dettes à consolider':'Debts to consolidate','+ Ajouter':'+ Add','Type':'Type','Solde':'Balance','Taux':'Rate','Pmt / mois':'Pmt / mo',
+    'Carte de crédit':'Credit card','Marge personnelle':'Personal line of credit','Prêt auto':'Car loan','Prêt étudiant':'Student loan',
+    'Taux d\'intérêt':'Interest rate','Taux annuel — entrez votre taux offert':'Annual rate — enter the rate you were offered',
+    '30 ans : achat assuré (SCHL) ou refi / conv.':'30 yrs: insured purchase (CMHC) or refi / conventional',
+    'Fréquence de paiement':'Payment frequency','Mensuel':'Monthly','Aux 2 sem.':'Bi-weekly',
+    'Bihebdo accéléré':'Accel. bi-weekly','Hebdo accéléré':'Accel. weekly','Durée du terme':'Term length',
+    '1 an':'1 yr','2 ans':'2 yrs','3 ans':'3 yrs','4 ans':'4 yrs','5 ans':'5 yrs','7 ans':'7 yrs','10 ans':'10 yrs',
+    'Paiement bihebdomadaire accéléré':'Accelerated bi-weekly payment','Paiement hebdomadaire accéléré':'Accelerated weekly payment',
+    'Paiement mensuel':'Monthly payment','Paiement aux 2 semaines':'Bi-weekly payment',
+    'Solde après le terme':'Balance after term','Intérêts payés (terme)':'Interest paid (term)',
+    'Détail du prêt':'Loan details','Montant emprunté':'Amount borrowed','Taux annuel effectif':'Effective annual rate',
+    'Amortissement total':'Total amortization','Total des intérêts (amortissement complet)':'Total interest (full amortization)',
+    'Coût total du prêt':'Total cost of the loan',
+    '💡 Impact de la fréquence accélérée':'💡 Impact of accelerated payments',
+    'Économie en intérêts vs mensuel':'Interest saved vs monthly','Amortissement réduit de':'Amortization shortened by',
+    'Le paiement bihebdomadaire accéléré équivaut à faire un 13e paiement mensuel par année, ce qui réduit votre amortissement d\'environ 2–4 ans.':'Accelerated bi-weekly payments amount to one extra monthly payment per year (13 instead of 12), which shortens your amortization by roughly 2–4 years.',
+    'Les calculs sont à titre indicatif. Le taux réel sera déterminé par le prêteur selon votre dossier. Les taux hypothécaires au Canada sont capitalisés semi-annuellement.':'Calculations are for illustration only. The actual rate will be set by the lender based on your file. Canadian mortgage rates are compounded semi-annually.',
+    'Minimum 5 % du prix d\'achat':'Minimum 5% of the purchase price','Minimum 20 % pour prix ≥ 1 M$':'Minimum 20% for prices ≥ $1M',
+    '30 ans : premiers acheteurs ou maison neuve seulement (avec SCHL)':'30 yrs: first-time buyers or new builds only (with CMHC)',
+    '⚠️ 30 ans avec SCHL : réservé aux premiers acheteurs ou maison neuve':'⚠️ 30 yrs with CMHC: reserved for first-time buyers or new builds',
+    '30 ans disponible — conventionnel (mise ≥ 20 %)':'30 yrs available — conventional (down payment ≥ 20%)',
+    '30 ans disponible en refinancement':'30 yrs available on a refinance',
+    '12 paiements / année':'12 payments / year','26 paiements / année':'26 payments / year',
+    '26 paiements / année — équivaut à 13 paiements mensuels':'26 payments / year — equals 13 monthly payments',
+    '52 paiements / année — équivaut à 13 paiements mensuels':'52 payments / year — equals 13 monthly payments',
+    'Paiements dettes actuels':'Current debt payments','Augmentation paiement hypo':'Mortgage payment increase','Économie mensuelle':'Monthly savings',
+    'Supprimer':'Remove','pmt/mois':'pmt/mo','RPV :':'LTV:','— max 80 %':'— max 80%',
+    'Coût total des intérêts supplémentaires :':'Total extra interest cost:','Remboursement TVQ provincial':'Provincial QST rebate',
+    // fragments of mixed nodes
+    'Capital':'Principal','Intérêts':'Interest',
+    // PDF
+    'Résumé — Frais de transaction':'Summary — Closing costs','Résumé hypothécaire':'Mortgage summary',
+    'TRANSACTION':'TRANSACTION','TAXE DE BIENVENUE (DROITS DE MUTATION)':'WELCOME TAX (LAND TRANSFER DUTIES)',
+    'Crédit premier acheteur':'First-time buyer credit','PRIME SCHL':'CMHC PREMIUM','TVQ sur prime SCHL (9,975 %)':'QST on CMHC premium (9.975%)',
+    'REMBOURSEMENTS — MAISON NEUVE':'REBATES — NEW BUILD',
+    'AUTRES FRAIS ESTIMÉS':'OTHER ESTIMATED COSTS',
+    'TOTAL ESTIMÉ (FRAIS COMPTANT)':'ESTIMATED TOTAL (CASH COSTS)',
+    'La prime SCHL est ajoutée au prêt et n\'est pas incluse dans le total comptant.':'The CMHC premium is added to the loan and is not included in the cash total.',
+    'Calculateur à titre indicatif — les montants réels peuvent varier. hypolite.ca':'For illustration only — actual amounts may vary. hypolite.ca',
+    'Simon Labrecque, courtier hypothécaire, Planiprêt #234768':'Simon Labrecque, mortgage broker, Planiprêt #234768',
+    'Calculateur à titre indicatif — taux capitalisés semi-annuellement (norme canadienne). hypolite.ca':'For illustration only — rates compounded semi-annually (Canadian standard). hypolite.ca',
+    'PARAMÈTRES DU PRÊT':'LOAN PARAMETERS','Mode':'Mode','Achat / Acquisition':'Purchase','PAIEMENTS':'PAYMENTS','Paiement':'Payment',
+    'TERME':'TERM','COÛT TOTAL (AMORTISSEMENT COMPLET)':'TOTAL COST (FULL AMORTIZATION)','Total des intérêts':'Total interest',
+    'IMPACT — FRÉQUENCE ACCÉLÉRÉE':'IMPACT — ACCELERATED PAYMENTS','CONSOLIDATION DE DETTES':'DEBT CONSOLIDATION'
+  };
+
+  // Patterns for text that embeds numbers. Applied after EXACT misses, before number formatting.
+  const PATTERNS = [
+    [/^⚠️ Minimum (.+) \((.+)\) pour ce prix$/, '⚠️ Minimum $1 ($2) for this price'],
+    [/^(.+) % — SCHL requis \(min\. 5 %\)$/, '$1 % — CMHC required (min. 5 %)'],
+    [/^(.+) % — SCHL requis$/, '$1 % — CMHC required'],
+    [/^(.+) % — Pas de SCHL$/, '$1 % — No CMHC'],
+    [/^(.+) % — Conventionnel \(pas de SCHL\)$/, '$1 % — Conventional (no CMHC)'],
+    [/^RPV : (.+) — max 80 %$/, 'LTV: $1 — max 80 %'],
+    [/^⚠️ RPV (.+) avec consolidation — maximum 80 % \(réduire le montant ou les dettes\)$/, '⚠️ LTV $1 with consolidation — maximum 80 % (reduce the amount or the debts)'],
+    [/^⚠️ RPV (.+) — maximum 80 %(.*)$/, '⚠️ LTV $1 — maximum 80 %$2'],
+    [/^(.+) % de l'année restante — taux ~(.+) % \(estimé\)$/, '$1 % of the year remaining — rate ~$2 % (estimate)'],
+    [/^Selon la date — taux ~(.+) % \(estimé\)$/, 'Depends on the date — rate ~$1 % (estimate)'],
+    [/^36 % × (.+) \(TPS 5 %\)$/, '36 % × $1 (GST 5 %)'],
+    [/^36 % × (.+) \(TVQ 9,975 %\)$/, '36 % × $1 (QST 9,975 %)'],
+    [/^Réduction progressive \((.+)\) — max (.+)$/, 'Phase-out ($1) — max $2'],
+    [/^(.+) \(prime SCHL (.+) incluse\)$/, '$1 (CMHC premium $2 included)'],
+    [/^(.+) % \(capitalisé semi-annuellement\)$/, '$1 % (compounded semi-annually)'],
+    [/^(.+) \/ mois$/, '$1 / mo'],
+    [/^\+ (.+) \/ mois$/, '+ $1 / mo'],
+    [/^(\d+) ans? et (\d+) mois$/, '$1 yrs $2 mo'],
+    [/^(\d+) an$/, '$1 yr'],
+    [/^(\d+) ans$/, '$1 yrs'],
+    [/^(\d+) mois$/, '$1 mo'],
+    [/^(.+) sur (\d+) ans — consolider allonge la durée de remboursement\. Vérifiez avec votre courtier si c'est avantageux dans votre situation\.$/, '$1 over $2 yrs — consolidating stretches out the repayment period. Check with your broker that it\'s worthwhile in your situation.']
+  ];
+
+  // Number clean-up for text that did NOT come straight from the dictionary.
+  function enNumbers(s){
+    return s
+      .replace(/(\d),(\d)/g,'$1.$2')                                      // decimal comma → point
+      .replace(/(\d{1,3}(?:[   ]\d{3})+)(?!\d)/g, m=>m.replace(/[   ]/g,','))   // group separators
+      .replace(/(\d[\d,]*(?:\.\d+)?)[   ]\$/g,'$$$1')           // "1,800 $" → "$1,800"
+      .replace(/(\d)[   ]%/g,'$1%')                             // "5 %" → "5%"
+      .replace(/\$(\d+)[   ]?M\b/g,'$$$1M');
+  }
+
+  let lang = 'fr';
+  const SKIP = new Set(['SCRIPT','STYLE','TEXTAREA']);
+  const store = new WeakMap();      // node/element → bookkeeping (French source + what we last displayed)
+
+  function tr(fr){
+    if(lang==='fr') return fr;
+    const lead = fr.match(/^\s*/)[0], trail = fr.match(/\s*$/)[0];
+    const core = fr.trim().replace(/\s+/g,' ').replace(/\u2019/g,"'");
+    if(!core) return fr;
+    if(EXACT[core]!==undefined) return lead + EXACT[core] + trail;
+    for(const [re,rep] of PATTERNS){ if(re.test(core)) return lead + enNumbers(core.replace(re,rep)) + trail; }
+    return lead + enNumbers(core) + trail;
+  }
+  // For literal French strings built by app code (e.g. PDF labels). Never feed it text read from the DOM.
+  function T(s){ return lang==='fr' ? s : tr(s); }
+
+  function syncText(n){
+    const p = n.parentNode; if(p && (SKIP.has(p.tagName) || (p.closest && p.closest('#hySheet')))) return;
+    let s = store.get(n);
+    if(!s || n.nodeValue !== s.shown){ s = {fr:n.nodeValue, shown:n.nodeValue}; store.set(n,s); }   // new, or rewritten by the app
+    const want = tr(s.fr);
+    if(n.nodeValue!==want) n.nodeValue = want;
+    s.shown = want;
+  }
+  const ATTRS = ['placeholder','aria-label','title','label'];
+  function syncAttrs(el){
+    if(!el.hasAttribute) return;
+    let m = store.get(el); if(!m){ m = {}; store.set(el,m); }
+    for(const a of ATTRS){
+      if(!el.hasAttribute(a)) continue;
+      const cur = el.getAttribute(a);
+      let s = m[a];
+      if(!s || cur !== s.shown){ s = {fr:cur, shown:cur}; m[a]=s; }
+      const want = tr(s.fr);
+      if(cur!==want) el.setAttribute(a,want);
+      s.shown = want;
+    }
+  }
+  // Elements mixing text and markup (<strong>, <br>, links) are matched on their whole innerHTML.
+  function syncBlock(el){
+    let b = store.get(el);
+    const blk = b && b.block;
+    const norm = h=>h.trim().replace(/\s+/g,' ');
+    let fr;
+    if(blk && el.innerHTML===blk.shown) fr = blk.fr; else fr = el.innerHTML;
+    const hit = lang==='en' ? EXACT[norm(fr)] : undefined;
+    if(lang==='en' && hit!==undefined){
+      if(el.innerHTML!==hit) el.innerHTML = hit;
+      if(!b){ b={}; store.set(el,b); }
+      b.block = {fr, shown: el.innerHTML};
+      return true;
+    }
+    if(blk && lang==='fr' && blk.fr!==el.innerHTML){ el.innerHTML = blk.fr; store.get(el).block = null; return true; }
+    if(blk && el.innerHTML===blk.shown) { /* EN block without hit shouldn't happen */ }
+    return false;
+  }
+  function sync(root){
+    if(root.nodeType===3){ syncText(root); return; }
+    if(root.nodeType!==1 || SKIP.has(root.tagName) || (root.closest && root.closest('#hySheet'))) return;
+    if(root.children.length && [...root.childNodes].some(n=>n.nodeType===3 && n.nodeValue.trim()) || (store.get(root)&&store.get(root).block)){
+      if(syncBlock(root)){ syncAttrs(root); return; }
+    }
+    syncAttrs(root);
+    root.childNodes.forEach(sync);
+  }
+
+  const mo = new MutationObserver(muts=>{
+    for(const m of muts){
+      if(m.type==='characterData') syncText(m.target);
+      else if(m.type==='attributes') syncAttrs(m.target);
+      else { m.addedNodes.forEach(sync); if(m.target.nodeType===1 && m.target!==document.body) sync(m.target); }
+    }
+  });
+
+  const TITLE_FR = document.title;
+  function apply(){
+    sync(document.body);
+    document.title = lang==='en' ? (EXACT[TITLE_FR]||TITLE_FR) : TITLE_FR;
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('#langBtn span').forEach(function(s){ s.classList.toggle('on', s.getAttribute('data-l')===lang); });
+    const b = document.getElementById('langBtn');
+    if(b){ const l = lang==='en' ? 'Passer en français / Switch to French' : 'Switch to English / Changer la langue'; b.setAttribute('aria-label',l); b.title = l; }
+    const tb = document.getElementById('themeBtn');
+    if(tb){ const dk = document.documentElement.getAttribute('data-theme')==='dark'; const l = lang==='en' ? (dk?'Switch to light theme':'Switch to dark theme') : (dk?'Passer au thème clair':'Passer au thème sombre'); tb.setAttribute('aria-label',l); tb.title = l; }
+  }
+  function set(l){
+    lang = l;
+    try{ localStorage.setItem('hy-lang', l); }catch(e){}
+    apply();
+    document.dispatchEvent(new CustomEvent('langchange',{detail:l}));
+  }
+  function init(){
+    let l = 'fr';
+    try{ const st = localStorage.getItem('hy-lang'); l = (st==='en'||st==='fr') ? st : 'fr'; }catch(e){}
+    mo.observe(document.body,{childList:true,characterData:true,subtree:true,attributes:true,attributeFilter:ATTRS});
+    const b = document.getElementById('langBtn');
+    if(b) b.addEventListener('click',()=>set(lang==='en'?'fr':'en'));
+    set(l);
+  }
+  return { init, set, T, get lang(){return lang;}, get locale(){return lang==='en'?'en-CA':'fr-CA';}, money(n){ return lang==='en' ? '$'+n.toLocaleString('en-CA') : n.toLocaleString('fr-CA')+' $'; } };
+})();
+
+// ─── PDF EXPORT ──────────────────────────────────────────────────────────────
+/*HY-PRINT-JS*/
+// Branded print sheet (shared look with capacite/). sections: [{t, rows:[{l, v, o:{bold,big,gold,red,green}}]}]
+function hySheet(eyebrow, sections, notes, disc){
+  var T=function(s){return I18N.T(s)};
+  var el=document.getElementById('hySheet');
+  if(!el){el=document.createElement('div');el.id='hySheet';el.setAttribute('aria-hidden','true');document.body.appendChild(el)}
+  el.textContent='';
+  function mk(tag,cls,txt){var n=document.createElement(tag);if(cls)n.className=cls;if(txt!=null)n.textContent=txt;return n}
+  var head=mk('div','ps-head');
+  head.appendChild(mk('div','ps-eye',eyebrow));
+  head.appendChild(mk('div','ps-name','Simon Labrecque'));
+  head.appendChild(mk('div','ps-role',T('Courtier hypothécaire — Planiprêt')));
+  var ct=mk('div','ps-contact');['(514) 900-1720','slabrecque@planipret.com','hypolite.ca'].forEach(function(x){ct.appendChild(mk('span',null,x))});
+  head.appendChild(ct);el.appendChild(head);
+  var body=mk('div','ps-body');
+  sections.forEach(function(s){
+    body.appendChild(mk('h2',null,s.t));
+    s.rows.forEach(function(r){
+      var o=r.o||{},row=mk('div','ps-r'+(o.big?' big':''));
+      row.appendChild(mk('span',null,r.l));
+      row.appendChild(mk('b',o.gold?'gold':o.red?'red':o.green?'green':'',r.v));
+      body.appendChild(row);
+    });
+  });
+  (notes||[]).forEach(function(n){body.appendChild(mk('p','ps-note',T(n)))});
+  el.appendChild(body);
+  var d=mk('div','ps-disc');(disc||[]).forEach(function(t){d.appendChild(mk('p',null,T(t)))});
+  el.appendChild(d);
+  var f=mk('div','ps-foot');
+  f.appendChild(mk('span',null,T('Simon Labrecque, courtier hypothécaire, Planiprêt #234768')));
+  f.appendChild(mk('span',null,new Date().toLocaleDateString(I18N.locale,{year:'numeric',month:'long',day:'numeric'})));
+  el.appendChild(f);
+}
+function doExportPDF() {
+  const g = id => { const el = document.getElementById(id); return el ? el.textContent.trim() : '—'; };
+  const S = []; let cur;
+  const sec = t => { const x = I18N.T(t); cur = {t: x.charAt(0) + x.slice(1).toLowerCase(), rows: []}; S.push(cur); };
+  const row = (l, v, o) => { cur.rows.push({l: l ? I18N.T(l) : '', v: v, o: o || {}}); };
+
+  sec('TRANSACTION');
+  const prixInput = document.getElementById('prix');
+  if (prixInput && prixInput.value) {
+    const prixNum = parseFloat(prixInput.value.replace(/[\s ,]/g, ''));
+    if (!isNaN(prixNum)) row('Prix d’achat', I18N.money(prixNum));
+  }
+  sec('TAXE DE BIENVENUE (DROITS DE MUTATION)');
+  row('Montant brut', g('txbAmount'), {red: true});
+  const creditEl = document.getElementById('creditBlock');
+  if (creditEl && !creditEl.hidden && g('credNet') !== '—') row('Crédit premier acheteur', '– ' + g('credNet'), {green: true});
+
+  const schlEl = document.getElementById('schlBlock');
+  if (schlEl && !schlEl.hidden) {
+    sec('PRIME SCHL');
+    row('Prime totale', g('schlAmount'), {red: true});
+    const tvq = g('tvqAmount');
+    if (tvq !== '—') row('TVQ sur prime SCHL (9,975 %)', tvq, {red: true});
+  }
+  const mnEl = document.getElementById('maisonneuveBlock');
+  if (mnEl && !mnEl.hidden) {
+    sec('REMBOURSEMENTS — MAISON NEUVE');
+    row('Remboursement TPS fédéral', '– ' + g('tpsRebateAmount'), {green: true});
+    row('Remboursement TVQ provincial', '– ' + g('tvqRebateAmount'), {green: true});
+  }
+  sec('AUTRES FRAIS ESTIMÉS');
+  const taxAdj = g('taxAdjAmount');
+  const taxFilled = document.getElementById('taxAdjLine').style.opacity !== '0.5';
+  if (taxFilled && taxAdj !== '—') row('Ajustement taxes municipales', taxAdj);
+  const scolAdj = g('scolAdjAmount');
+  if (taxFilled && scolAdj !== '—') row('Ajustement taxes scolaires', scolAdj);
+  const dm = document.getElementById('optDemenLine'), am = document.getElementById('optAmeubLine');
+  if (dm && !dm.hidden) row('Déménagement', g('optDemenAmt'));
+  if (am && !am.hidden) row('Ameublement / peinture', g('optAmeubAmt'));
+  row('Honoraires notariaux', I18N.T('1 800 $ – 3 000 $'));
+  row('Inspection préachat', I18N.T('~ 1 000 $'));
+  row('Évaluation (commandée par le prêteur)', I18N.T('~ 500 $'));
+
+  sec('TOTAL ESTIMÉ (FRAIS COMPTANT)');
+  row('Total estimé', g('totalCash'), {big: true, gold: true});
+  hySheet(I18N.T('Résumé — Frais de transaction'), S, ['La prime SCHL est ajoutée au prêt et n’est pas incluse dans le total comptant.'], [
+    'Estimation à titre indicatif. Les honoraires notariaux, l’inspection et l’évaluation sont des estimés. Les taxes (droits de mutation, TVQ, ajustements) varient selon la municipalité et la date de l’acte.',
+    'Calculateur à titre indicatif — les montants réels peuvent varier.'
+  ]);
+  window.print();
+}
+/*/HY-PRINT-JS*/
+
+// ─── CTA shown before the PDF is generated ─────────────────────────────────────
+function pdfCta(doc, y, lm, rm) {
+  if (y > 246) { doc.addPage(); y = 24; }
+  y += 4;
+  doc.setFillColor(247, 243, 236); doc.setDrawColor(213, 160, 95);
+  doc.roundedRect(lm, y, rm - lm, 25, 2, 2, 'FD');
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(11); doc.setTextColor(1, 35, 64);
+  doc.text(I18N.T('Validons ces chiffres ensemble — gratuit'), lm + 6, y + 9);
+  doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor(97, 108, 120);
+  doc.text('Simon Labrecque · (514) 900-1720 · slabrecque@planipret.com', lm + 6, y + 15.5);
+  doc.setTextColor(2, 78, 144);
+  doc.textWithLink('hypolite.ca', lm + 6, y + 21, {url: 'https://hypolite.ca/?src=pdf#intake'});
+}
+let _pdfFocus = null;
+function exportPDF() {
+  const m = document.getElementById('hyPdfModal');
+  _pdfFocus = document.activeElement;
+  m.hidden = false;
+  const cta = document.getElementById('hyPdfCta'); if (cta) cta.focus();
+}
+function closePdfModal() {
+  document.getElementById('hyPdfModal').hidden = true;
+  if (_pdfFocus && _pdfFocus.focus) _pdfFocus.focus();
+}
+function confirmPdf() { closePdfModal(); doExportPDF(); }
+(function () {
+  const m = document.getElementById('hyPdfModal');
+  m.addEventListener('click', e => { if (e.target === m) closePdfModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.hidden) closePdfModal(); });
+})();
+
+// Theme toggle: same storage key and default (light) as the main site
+(function(){
+  const root=document.documentElement;
+  const btn=document.getElementById('themeBtn');
+  function labels(){ try{ I18N.set(I18N.lang); }catch(e){} }
+  btn.addEventListener('click',function(){
+    const t=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',t);
+    try{ localStorage.setItem('hy-theme',t); }catch(e){}
+    labels();
+  });
+})();
+
+I18N.init();
+</script>
+<!--HY-MENU-JS--><script>
+(function(){
+  var nl=document.getElementById('navlinks'); if(!nl) return;
+  function closeMenu(){ nl.classList.remove('open'); }
+  document.addEventListener('click',function(e){
+    if(!nl.classList.contains('open')) return;
+    if(e.target.closest('.burger')) return;
+    if(!nl.contains(e.target) || e.target.closest('a')) closeMenu();
+  },true);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeMenu(); });
+})();
+</script><!--/HY-MENU-JS-->
+</body>
+</html>

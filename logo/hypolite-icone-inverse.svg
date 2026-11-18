@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Hypolite"><title>Hypolite</title><g id="icon-ir">
+<path d="M18 92 L100 18 L182 92" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-linejoin="miter" stroke-miterlimit="10"/>
+<polygon points="136,22 158,22 158,70.3 136,50.5" fill="#FFFFFF"/>
+<path d="M40 72 V180 H160 V72" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-linejoin="miter" stroke-miterlimit="10"/>
+<clipPath id="win-ir"><path d="M76 164 V132 A24 24 0 0 1 124 132 V164 Z"/></clipPath>
+<g clip-path="url(#win-ir)" fill="#D5A05F">
+<rect x="76" y="100" width="22" height="34"/><rect x="102" y="100" width="22" height="34"/>
+<rect x="76" y="138" width="22" height="30"/><rect x="102" y="138" width="22" height="30"/></g>
+<path d="M67.6 116.2 L54.2 109.6 M80.9 101.5 L73.0 88.7 M100.0 96.0 L100.0 81.0 M119.1 101.5 L127.0 88.7 M132.4 116.2 L145.8 109.6 " stroke="#D5A05F" stroke-width="7" stroke-linecap="round" fill="none"/>
+</g></svg>

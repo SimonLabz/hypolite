@@ -392,6 +392,12 @@ body{padding:0}
           <option value="retraite">Retraité</option>
           <option value="autre">Autre</option>
         </select>
+        <select class="hy-in" name="emprunteurs" aria-label="Emprunteur(s) (facultatif)">
+          <option value="">Emprunteur(s) (facultatif)</option>
+          <option value="seul">Seul</option>
+          <option value="deux">À deux</option>
+          <option value="plus">Plus de deux personnes</option>
+        </select>
         <textarea class="hy-in" name="notes" placeholder="Parlez-moi de votre projet (optionnel)" aria-label="Parlez-moi de votre projet (optionnel)"></textarea>
         <input class="hy-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label class="hy-chk"><input type="checkbox" name="consent"><span>J'accepte d'être contacté par Simon Labrecque au sujet de ma demande et qu'il reçoive les chiffres saisis dans le calculateur.</span></label>
@@ -499,7 +505,7 @@ window.HY_CONFIG = window.HY_CONFIG || {
     if(f.website.value){show('done');return;}   // honeypot: pretend success
     btn.disabled=true;btn.textContent=isEn()?'Sending...':'Envoi en cours...';
     var data={noms:d.noms,courriel:d.courriel,telephone:d.telephone,projet:d.projet,notes:d.notes,
-      detenues:'',visee:'',revenu:f.revenu.value,scenario:getSc(),consentement:true,
+      detenues:'',visee:'',revenu:f.revenu.value,emprunteurs:f.emprunteurs.value,scenario:getSc(),consentement:true,
       source:'hypolite.ca'+location.pathname+(src?'?src='+src:''),
       trigger:'hypotheque123go',timestamp:new Date().toISOString()};
     try{

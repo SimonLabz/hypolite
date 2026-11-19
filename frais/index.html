@@ -388,10 +388,18 @@ body{padding:0}
         <input class="hy-in" type="tel" name="telephone" autocomplete="tel" inputmode="tel" placeholder="(514) 555-1234" aria-label="(514) 555-1234">
         <select class="hy-in" name="projet" aria-label="Type de projet">
           <option value="">Type de projet</option>
+          <option value="prequalification">Préqualification</option>
           <option value="achat">Achat</option>
           <option value="renouvellement">Renouvellement</option>
           <option value="refinancement">Refinancement</option>
           <option value="consolidation">Consolidation de dettes</option>
+          <option value="autre">Autre</option>
+        </select>
+        <select class="hy-in" name="revenu" aria-label="Source de revenu (facultatif)">
+          <option value="">Source de revenu (facultatif)</option>
+          <option value="salarie">Salarié</option>
+          <option value="autonome">Travailleur autonome</option>
+          <option value="retraite">Retraité</option>
           <option value="autre">Autre</option>
         </select>
         <textarea class="hy-in" name="notes" placeholder="Parlez-moi de votre projet (optionnel)" aria-label="Parlez-moi de votre projet (optionnel)"></textarea>
@@ -426,9 +434,9 @@ body{padding:0}
 </div>
 <script>
 window.HY_CONFIG = window.HY_CONFIG || {
-  powerAutomateUrl: 'VOTRE_URL_POWER_AUTOMATE_ICI',
+  powerAutomateUrl: 'https://hypolite-leads.labz-simon.workers.dev',
   fallbackEmail: 'slabrecque@planipret.com',
-  mode: 'email'  // 'email', 'power-automate', ou 'both'
+  mode: 'power-automate'  // 'email', 'power-automate', ou 'both'
 };
 (function(){
   var m=document.getElementById('hyBook');if(!m)return;
@@ -501,12 +509,13 @@ window.HY_CONFIG = window.HY_CONFIG || {
     if(f.website.value){show('done');return;}   // honeypot: pretend success
     btn.disabled=true;btn.textContent=isEn()?'Sending...':'Envoi en cours...';
     var data={noms:d.noms,courriel:d.courriel,telephone:d.telephone,projet:d.projet,notes:d.notes,
-      detenues:'',visee:'',revenu:'',scenario:getSc(),consentement:true,
+      detenues:'',visee:'',revenu:f.revenu.value,scenario:getSc(),consentement:true,
       source:'hypolite.ca'+location.pathname+(src?'?src='+src:''),
       trigger:'hypotheque123go',timestamp:new Date().toISOString()};
     try{
       if(CFG.mode==='power-automate'||CFG.mode==='both'){
-        await fetch(CFG.powerAutomateUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+        var rep=await fetch(CFG.powerAutomateUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+        if(!rep.ok)throw new Error('HTTP '+rep.status);
       }
       show('done');
       if(CFG.mode==='email'){
